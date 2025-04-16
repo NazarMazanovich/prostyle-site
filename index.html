@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProStyle — Натяжні стелі Київ</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Rubik', sans-serif; }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+  <header class="bg-gray-900 text-white p-6">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">ProStyle</h1>
+      <nav class="space-x-6">
+        <a href="#about" class="hover:text-yellow-400">Про нас</a>
+        <a href="#gallery" class="hover:text-yellow-400">Галерея</a>
+        <a href="#prices" class="hover:text-yellow-400">Ціни</a>
+        <a href="#reviews" class="hover:text-yellow-400">Відгуки</a>
+        <a href="#contact" class="hover:text-yellow-400">Контакти</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="bg-yellow-100 py-20 text-center">
+    <h2 class="text-4xl font-extrabold mb-4">Натяжні стелі в Києві під ключ</h2>
+    <p class="text-xl mb-6">Якісно. Швидко. З гарантією до 15 років.</p>
+    <a href="#contact" class="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-full text-lg">
+      Замовити безкоштовний замір
+    </a>
+  </section>
+
+  <section id="about" class="py-16 max-w-5xl mx-auto px-6">
+    <h3 class="text-3xl font-bold mb-4">Чому саме ProStyle?</h3>
+    <ul class="list-disc pl-5 space-y-2 text-lg">
+      <li>10+ років досвіду в монтажі стель</li>
+      <li>Безкоштовний виїзд замірника</li>
+      <li>Сучасні матеріали та LED підсвітка</li>
+      <li>Гнучкі ціни та знижки</li>
+    </ul>
+  </section>
+
+  <section id="gallery" class="bg-gray-100 py-16 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h3 class="text-3xl font-bold mb-6">Наші роботи</h3>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <img src="https://via.placeholder.com/300x200" class="rounded-lg shadow" alt="Стеля 1" />
+        <img src="https://via.placeholder.com/300x200" class="rounded-lg shadow" alt="Стеля 2" />
+        <img src="https://via.placeholder.com/300x200" class="rounded-lg shadow" alt="Стеля 3" />
+        <img src="https://via.placeholder.com/300x200" class="rounded-lg shadow" alt="Стеля 4" />
+      </div>
+    </div>
+  </section>
+
+  <section id="prices" class="py-16 max-w-5xl mx-auto px-6">
+    <h3 class="text-3xl font-bold mb-6">Ціни</h3>
+    <table class="w-full text-left border-collapse">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="p-3 border">Тип стелі</th>
+          <th class="p-3 border">Ціна за м²</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="p-3 border">Біла матова</td>
+          <td class="p-3 border">від 350 грн</td>
+        </tr>
+        <tr>
+          <td class="p-3 border">Глянцева</td>
+          <td class="p-3 border">від 400 грн</td>
+        </tr>
+        <tr>
+          <td class="p-3 border">Сатинова</td>
+          <td class="p-3 border">від 420 грн</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="reviews" class="bg-gray-100 py-16 px-6">
+    <div class="max-w-5xl mx-auto">
+      <h3 class="text-3xl font-bold mb-6">Відгуки клієнтів</h3>
+      <div class="space-y-4">
+        <div class="bg-white p-4 rounded shadow">
+          <p>"Все дуже сподобалось! Привітна команда, швидко зробили — стеля ідеальна."</p>
+          <p class="text-sm text-gray-500 mt-2">— Олена, Київ</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow">
+          <p>"Замовив з підсвіткою — виглядає супер, ціна приємна. Рекомендую!"</p>
+          <p class="text-sm text-gray-500 mt-2">— Андрій, Київ</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="py-16 px-6 max-w-5xl mx-auto">
+    <h3 class="text-3xl font-bold mb-6">Залишити заявку</h3>
+    <form class="space-y-4">
+      <input type="text" placeholder="Ваше ім'я" class="w-full border p-3 rounded" required />
+      <input type="tel" placeholder="Номер телефону" class="w-full border p-3 rounded" required />
+      <textarea placeholder="Коментар або питання" class="w-full border p-3 rounded" rows="4"></textarea>
+      <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded">
+        Надіслати заявку
+      </button>
+    </form>
+    <p class="mt-8 text-sm text-gray-600">або напишіть нам у <a href="#" class="text-blue-600 underline">Telegram</a></p>
+  </section>
+
+  <footer class="bg-gray-900 text-white py-6 text-center">
+    <p>&copy; 2025 ProStyle. Натяжні стелі в Києві</p>
+  </footer>
+</body>
+</html>
