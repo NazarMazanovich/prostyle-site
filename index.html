@@ -160,3 +160,46 @@
   </div>
 </section>
 
+<!-- Examples Section -->
+<section id="examples" class="bg-gray-100 text-gray-800 py-16 px-4">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-10">Приклади робіт</h2>
+    <div class="relative">
+      <!-- Scrollable Gallery -->
+      <div id="gallery" class="flex overflow-x-auto space-x-4 scroll-smooth scrollbar-hide">
+        <img src="example1.jpg" alt="Приклад 1" class="w-72 h-auto flex-shrink-0 rounded shadow" />
+        <img src="example2.jpg" alt="Приклад 2" class="w-72 h-auto flex-shrink-0 rounded shadow" />
+        <img src="example3.jpg" alt="Приклад 3" class="w-72 h-auto flex-shrink-0 rounded shadow" />
+        <img src="example4.jpg" alt="Приклад 4" class="w-72 h-auto flex-shrink-0 rounded shadow" />
+        <img src="example5.jpg" alt="Приклад 5" class="w-72 h-auto flex-shrink-0 rounded shadow" />
+        <img src="example6.jpg" alt="Приклад 6" class="w-72 h-auto flex-shrink-0 rounded shadow" />
+        <img src="example7.jpg" alt="Приклад 7" class="w-72 h-auto flex-shrink-0 rounded shadow" />
+        <img src="example8.jpg" alt="Приклад 8" class="w-72 h-auto flex-shrink-0 rounded shadow" />
+        <img src="example9.jpg" alt="Приклад 9" class="w-72 h-auto flex-shrink-0 rounded shadow" />
+      </div>
+
+      <!-- Navigation Arrows -->
+      <button onclick="scrollGallery(-1)" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-transparent text-3xl text-gray-400 hover:text-gray-700 hover:scale-110 transition px-2">‹</button>
+      <button onclick="scrollGallery(1)" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-transparent text-3xl text-gray-400 hover:text-gray-700 hover:scale-110 transition px-2">›</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  function scrollGallery(direction) {
+    const gallery = document.getElementById('gallery');
+    const scrollAmount = 320;
+    gallery.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+  }
+</script>
+
+<style>
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
