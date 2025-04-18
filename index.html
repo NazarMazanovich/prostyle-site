@@ -249,49 +249,91 @@
 </style>
 
 <!-- Reviews Section -->
-<section id="reviews" class="bg-white text-gray-800 py-20 px-4 relative">
-  <div class="max-w-6xl mx-auto text-center">
-    <h2 class="text-3xl font-bold mb-10">Відгуки клієнтів</h2>
+<section id="reviews" class="bg-white text-gray-800 py-20">
+  <div class="max-w-7xl mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold mb-12">Відгуки наших клієнтів</h2>
 
     <div class="relative">
-      <!-- Scrollable Container -->
-      <div id="reviewGallery" class="flex gap-6 overflow-x-auto scroll-smooth scrollbar-hide px-4">
-        <div class="min-w-[300px] bg-gray-50 rounded-xl p-6 shadow-md animate-fade-in">
-          <p class="italic text-gray-700 mb-4">“ProStyle — це рівень! Робота зроблена швидко, чітко, стильно. Буду радити всім!”</p>
-          <div class="text-sm text-gray-500">Олег, Бровари</div>
+      <!-- Scrollable Row -->
+      <div id="reviewGallery" class="flex gap-6 overflow-x-auto scroll-smooth scrollbar-hide px-2">
+        <!-- Review 1 -->
+        <div class="min-w-[300px] bg-gray-100 rounded-lg shadow-md p-6 text-left animate-fadeIn">
+          <p class="italic mb-4">“Робота зроблена ідеально. Монтаж за 1 день, якість – супер! Рекомендую!”</p>
+          <p class="font-semibold">Андрій, м. Київ</p>
         </div>
-        <div class="min-w-[300px] bg-gray-50 rounded-xl p-6 shadow-md animate-fade-in delay-100">
-          <p class="italic text-gray-700 mb-4">“Якість супер! Майстри приїхали вчасно, встановили за день. Результат перевершив очікування.”</p>
-          <div class="text-sm text-gray-500">Марія, Київ (Соломʼянка)</div>
+        <!-- Review 2 -->
+        <div class="min-w-[300px] bg-gray-100 rounded-lg shadow-md p-6 text-left animate-fadeIn">
+          <p class="italic mb-4">“Стелі з фотодруком – це вау! Діти в захваті. Дякуємо команді ProStyle.”</p>
+          <p class="font-semibold">Олена, м. Ірпінь</p>
         </div>
-        <div class="min-w-[300px] bg-gray-50 rounded-xl p-6 shadow-md animate-fade-in delay-200">
-          <p class="italic text-gray-700 mb-4">“Дуже стильні стелі. Зробили магнітний трек — всі питають, де замовили 😍”</p>
-          <div class="text-sm text-gray-500">Інна, Вишгород</div>
+        <!-- Review 3 -->
+        <div class="min-w-[300px] bg-gray-100 rounded-lg shadow-md p-6 text-left animate-fadeIn">
+          <p class="italic mb-4">“Дизайн, швидкість і ціна — все на рівні. Буду радити друзям.”</p>
+          <p class="font-semibold">Максим, м. Бровари</p>
         </div>
-        <div class="min-w-[300px] bg-gray-50 rounded-xl p-6 shadow-md animate-fade-in delay-300">
-          <p class="italic text-gray-700 mb-4">“Довго думали, кого обрати. І не пожалкували! Чіткий підхід і приємне спілкування.”</p>
-          <div class="text-sm text-gray-500">Юлія, Київ (Оболонь)</div>
+        <!-- Review 4 -->
+        <div class="min-w-[300px] bg-gray-100 rounded-lg shadow-md p-6 text-left animate-fadeIn">
+          <p class="italic mb-4">“Замовив «зоряне небо» у спальню — відчуття космосу! Профі!”</p>
+          <p class="font-semibold">Ірина, м. Вишневе</p>
         </div>
-        <div class="min-w-[300px] bg-gray-50 rounded-xl p-6 shadow-md animate-fade-in delay-400">
-          <p class="italic text-gray-700 mb-4">“Замовляли сатинову стелю з підсвіткою. Результат — 🔥. Вдячні команді ProStyle!”</p>
-          <div class="text-sm text-gray-500">Антон, Буча</div>
+        <!-- Review 5 -->
+        <div class="min-w-[300px] bg-gray-100 rounded-lg shadow-md p-6 text-left animate-fadeIn">
+          <p class="italic mb-4">“Від заміру до монтажу — усе чітко і культурно. Дуже задоволені!”</p>
+          <p class="font-semibold">Роман, м. Обухів</p>
         </div>
-        <div class="min-w-[300px] bg-gray-50 rounded-xl p-6 shadow-md animate-fade-in delay-500">
-          <p class="italic text-gray-700 mb-4">“Все просто супер! Від першого дзвінка до монтажу — сервіс на рівні!”</p>
-          <div class="text-sm text-gray-500">Олена, Київ (Троєщина)</div>
+        <!-- Review 6 -->
+        <div class="min-w-[300px] bg-gray-100 rounded-lg shadow-md p-6 text-left animate-fadeIn">
+          <p class="italic mb-4">“Професійно, швидко і якісно. Видно, що люди люблять свою справу.”</p>
+          <p class="font-semibold">Катерина, м. Буча</p>
         </div>
       </div>
 
-      <!-- Стрілки навігації -->
-      <button onclick="scrollReviews(-1)" class="absolute top-1/2 left-0 transform -translate-y-1/2 p-4 text-3xl text-gray-400 hover:text-yellow-500 transition duration-200 z-10">
-        ‹
+      <!-- Left Arrow -->
+      <button onclick="scrollReviews(-1)" class="absolute left-0 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 hover:bg-yellow-200 p-3 rounded-full shadow-md transition-all">
+        ⬅️
       </button>
-      <button onclick="scrollReviews(1)" class="absolute top-1/2 right-0 transform -translate-y-1/2 p-4 text-3xl text-gray-400 hover:text-yellow-500 transition duration-200 z-10">
-        ›
+
+      <!-- Right Arrow -->
+      <button onclick="scrollReviews(1)" class="absolute right-0 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 hover:bg-yellow-200 p-3 rounded-full shadow-md transition-all">
+        ➡️
       </button>
     </div>
   </div>
 </section>
+
+<!-- Optional Smooth Scroll Script -->
+<script>
+  function scrollReviews(direction) {
+    const gallery = document.getElementById('reviewGallery');
+    gallery.scrollBy({
+      left: direction * 350,
+      behavior: 'smooth'
+    });
+  }
+</script>
+
+<!-- Optional Tailwind Custom Animation -->
+<style>
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.6s ease-in-out;
+  }
+
+  /* Scrollbar Hide (Optional for better aesthetics) */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
 
 
 
