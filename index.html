@@ -225,31 +225,29 @@
   }
 </script>
 
-<!-- Reviews Section -->
-<section id="reviews" class="bg-white text-gray-800 py-20 px-4">
-  <div class="max-w-6xl mx-auto text-center">
-    <h2 class="text-3xl font-bold mb-12">Відгуки клієнтів</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <!-- Відгук 1 -->
-      <div class="bg-gray-50 rounded-xl p-6 shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-xl animate-fade-in">
-        <p class="italic text-gray-700 mb-4">“Команда ProStyle виконала свою роботу на всі 100%! Вітальня стала зовсім іншою — сучасною, світлою. Дякуємо!”</p>
-        <div class="text-sm text-gray-500">Ірина, Ірпінь</div>
-      </div>
+<style>
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+    opacity: 0;
+  }
+  .animate-fade-in.delay-100 { animation-delay: 0.1s; }
+  .animate-fade-in.delay-200 { animation-delay: 0.2s; }
+  .animate-fade-in.delay-300 { animation-delay: 0.3s; }
+  .animate-fade-in.delay-400 { animation-delay: 0.4s; }
+  .animate-fade-in.delay-500 { animation-delay: 0.5s; }
+</style>
 
-      <!-- Відгук 2 -->
-      <div class="bg-gray-50 rounded-xl p-6 shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-xl animate-fade-in delay-100">
-        <p class="italic text-gray-700 mb-4">“Супер сервіс, приємні майстри, все швидко і акуратно. Світлові лінії — це щось! Рекомендую.”</p>
-        <div class="text-sm text-gray-500">Олександр, Київ (Позняки)</div>
-      </div>
-
-      <!-- Відгук 3 -->
-      <div class="bg-gray-50 rounded-xl p-6 shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-xl animate-fade-in delay-200">
-        <p class="italic text-gray-700 mb-4">“Довго шукала компанію, з якою буде комфортно. І не помилилась. ProStyle — це професіонали з великої літери!”</p>
-        <div class="text-sm text-gray-500">Тетяна, Вишневе</div>
-      </div>
-    </div>
-  </div>
-</section>
 
 
 
