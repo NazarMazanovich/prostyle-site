@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ProStyle — Натяжні стелі у Києві</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Arial', sans-serif; }
+    .scroll-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+    }
+    .scroll-container::-webkit-scrollbar {
+      display: none;
+    }
+    .scroll-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0,0,0,0);
+      padding: 10px;
+      border-radius: 9999px;
+      transition: transform 0.3s;
+    }
+    .scroll-button:hover {
+      transform: translateY(-50%) scale(1.2);
+      background-color: rgba(0,0,0,0.1);
+    }
+    .left-btn {
+      left: 0;
+    }
+    .right-btn {
+      right: 0;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+<section id="examples" class="relative py-16 px-4 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold mb-8 text-center">Приклади робіт</h2>
+    <div class="relative">
+      <button onclick="scrollLeft()" class="scroll-button left-btn">&#8592;</button>
+      <div id="gallery" class="scroll-container space-x-4 px-4">
+        <img src="example1.jpg" alt="Стеля 1" class="h-64 w-auto rounded shadow-md flex-shrink-0">
+        <img src="example2.jpg" alt="Стеля 2" class="h-64 w-auto rounded shadow-md flex-shrink-0">
+        <img src="example3.jpg" alt="Стеля 3" class="h-64 w-auto rounded shadow-md flex-shrink-0">
+        <img src="example4.jpg" alt="Стеля 4" class="h-64 w-auto rounded shadow-md flex-shrink-0">
+        <img src="example5.jpg" alt="Стеля 5" class="h-64 w-auto rounded shadow-md flex-shrink-0">
+        <img src="example6.jpg" alt="Стеля 6" class="h-64 w-auto rounded shadow-md flex-shrink-0">
+        <img src="example7.jpg" alt="Стеля 7" class="h-64 w-auto rounded shadow-md flex-shrink-0">
+        <img src="example8.jpg" alt="Стеля 8" class="h-64 w-auto rounded shadow-md flex-shrink-0">
+        <img src="example9.jpg" alt="Стеля 9" class="h-64 w-auto rounded shadow-md flex-shrink-0">
+      </div>
+      <button onclick="scrollRight()" class="scroll-button right-btn">&#8594;</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  function scrollLeft() {
+    document.getElementById('gallery').scrollBy({ left: -300, behavior: 'smooth' });
+  }
+  function scrollRight() {
+    document.getElementById('gallery').scrollBy({ left: 300, behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>
