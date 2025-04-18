@@ -176,6 +176,37 @@
     </div>
   </div>
 </section>
+<!-- Examples Section -->
+<section id="examples" class="bg-gray-100 text-gray-800 py-16 px-4 relative">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-10">Приклади робіт</h2>
+
+    <div class="relative">
+      <!-- Scroll Container -->
+      <div id="gallery" class="flex gap-4 overflow-x-auto scroll-smooth scrollbar-hide">
+        <img src="example1.jpg" alt="Приклад 1" class="w-72 h-auto flex-shrink-0 rounded shadow" />
+        <img src="example2.jpg" alt="Приклад 2" class="w-72 h-auto flex-shrink-0 rounded shadow" />
+        <img src="example3.jpg" alt="Приклад 3" class="w-72 h-auto flex-shrink-0 rounded shadow" />
+        <img src="example4.jpg" alt="Приклад 4" class="w-72 h-auto flex-shrink-0 rounded shadow" />
+        <img src="example5.jpg" alt="Приклад 5" class="w-72 h-auto flex-shrink-0 rounded shadow" />
+        <img src="example6.jpg" alt="Приклад 6" class="w-72 h-auto flex-shrink-0 rounded shadow" />
+        <img src="example7.jpg" alt="Приклад 7" class="w-72 h-auto flex-shrink-0 rounded shadow" />
+        <img src="example8.jpg" alt="Приклад 8" class="w-72 h-auto flex-shrink-0 rounded shadow" />
+        <img src="example9.jpg" alt="Приклад 9" class="w-72 h-auto flex-shrink-0 rounded shadow" />
+      </div>
+
+      <!-- Left Arrow -->
+      <button onclick="scrollGallery(-1)" class="absolute top-1/2 -translate-y-1/2 left-0 p-4 text-2xl font-bold text-gray-500 hover:scale-125 transition duration-200">
+        ‹
+      </button>
+
+      <!-- Right Arrow -->
+      <button onclick="scrollGallery(1)" class="absolute top-1/2 -translate-y-1/2 right-0 p-4 text-2xl font-bold text-gray-500 hover:scale-125 transition duration-200">
+        ›
+      </button>
+    </div>
+  </div>
+</section>
 
 </body>
 </html>
