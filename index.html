@@ -1,33 +1,20 @@
-<!-- Tailwind і Alpine.js для мобільного меню -->
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://unpkg.com/alpinejs" defer></script>
-
-<header class="absolute top-0 left-0 w-full z-30 bg-black bg-opacity-40 text-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-4 flex items-center justify-between">
-    <div class="text-2xl font-bold">ProStyle</div>
-
-    <!-- Мобільне меню -->
-    <div x-data="{ open: false }" class="md:hidden">
-      <button @click="open = !open" class="focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"/>
-          <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M6 18L18 6M6 6l12 12"/>
-        </svg>
-      </button>
-      <div x-show="open" @click.away="open = false"
-        class="absolute left-0 top-full bg-black bg-opacity-90 w-full text-center py-4 space-y-4 text-sm uppercase font-medium md:hidden">
-        <a href="#about" class="block hover:text-yellow-400">Про нас</a>
-        <a href="#sales" class="block hover:text-yellow-400">Акції</a>
-        <a href="#services" class="block hover:text-yellow-400">Послуги та ціни</a>
-        <a href="#examples" class="block hover:text-yellow-400">Приклади робіт</a>
-        <a href="#reviews" class="block hover:text-yellow-400">Відгуки</a>
-        <a href="#contacts" class="block hover:text-yellow-400">Контакти</a>
-        <div class="text-sm mt-2 text-gray-300">(000) 000-00-00</div>
-      </div>
-    </div>
+<header class="absolute top-0 left-0 w-full z-20 flex flex-wrap items-center justify-between px-4 sm:px-10 py-4 bg-black bg-opacity-40 text-xs sm:text-sm">
+  <div class="text-xl sm:text-2xl font-bold mb-2 sm:mb-0 w-full sm:w-auto">ProStyle</div>
+  <nav class="flex flex-wrap justify-center gap-3 sm:gap-6 w-full sm:w-auto mb-2 sm:mb-0">
+    <a href="#about" class="hover:text-yellow-400">Про нас</a>
+    <a href="#sales" class="hover:text-yellow-400">Акції</a>
+    <a href="#services" class="hover:text-yellow-400">Послуги та ціни</a>
+    <a href="#examples" class="hover:text-yellow-400">Приклади робіт</a>
+    <a href="#reviews" class="hover:text-yellow-400">Відгуки</a>
+    <a href="#contacts" class="hover:text-yellow-400">Контакти</a>
+  </nav>
+  <div class="flex items-center space-x-3 sm:space-x-4 text-xs sm:text-sm w-full sm:w-auto justify-center sm:justify-end">
+    <span class="text-green-400">UA</span>
+    <span class="text-gray-300">RU</span>
+    <span class="font-semibold">(067) 134-12-44</span>
+  </div>
 </header>
+
 
     <!-- Десктоп-меню -->
     <nav class="hidden md:flex items-center space-x-6 text-sm font-medium uppercase">
