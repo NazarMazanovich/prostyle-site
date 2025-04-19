@@ -7,34 +7,15 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body { font-family: 'Arial', sans-serif; }
-    .scrollbar-hide::-webkit-scrollbar { display: none; }
-    .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
   </style>
 </head>
+
 <body class="m-0 p-0 text-white">
 
-<!-- Header -->
-<header class="absolute top-0 left-0 w-full z-20 flex items-center justify-between px-10 py-4 bg-black bg-opacity-40">
-  <div class="text-2xl font-bold">ProStyle</div>
-  <nav class="space-x-6 text-sm font-medium uppercase hidden md:flex">
-    <a href="#about" class="hover:text-yellow-400">Про нас</a>
-    <a href="#sales" class="hover:text-yellow-400">Акції</a>
-    <a href="#services" class="hover:text-yellow-400">Послуги та ціни</a>
-    <a href="#examples" class="hover:text-yellow-400">Приклади робіт</a>
-    <a href="#reviews" class="hover:text-yellow-400">Відгуки</a>
-    <a href="#contacts" class="hover:text-yellow-400">Контакти</a>
-  </nav>
-  <div class="flex items-center space-x-4 text-sm">
-    <span class="text-green-400">UA</span>
-    <span class="text-gray-300">RU</span>
-    <span class="font-semibold">(067) 134-12-44</span>
-  </div>
-</header>
-
-
-
-    <!-- Десктоп-меню -->
-    <nav class="hidden md:flex items-center space-x-6 text-sm font-medium uppercase">
+  <!-- Header -->
+  <header class="absolute top-0 left-0 w-full z-20 flex items-center justify-between px-10 py-4 bg-black bg-opacity-40">
+    <div class="text-2xl font-bold">ProStyle</div>
+    <nav class="space-x-6 text-sm font-medium uppercase">
       <a href="#about" class="hover:text-yellow-400">Про нас</a>
       <a href="#sales" class="hover:text-yellow-400">Акції</a>
       <a href="#services" class="hover:text-yellow-400">Послуги та ціни</a>
@@ -42,33 +23,24 @@
       <a href="#reviews" class="hover:text-yellow-400">Відгуки</a>
       <a href="#contacts" class="hover:text-yellow-400">Контакти</a>
     </nav>
-
-    <!-- Контакти справа (для десктопу) -->
-    <div class="hidden md:flex items-center space-x-4 text-sm">
+    <div class="flex items-center space-x-4 text-sm">
       <span class="text-green-400">UA</span>
       <span class="text-gray-300">RU</span>
-      <span class="font-semibold">(000) 000-00-00</span>
+      <span class="font-semibold">(067) 134-12-44</span>
     </div>
-  </div>
-</header>
+  </header>
 
-
- <!-- Hero Section (Адаптивний банер) -->
-<section class="relative h-screen bg-cover bg-center text-white flex items-center justify-center sm:h-[80vh]" style="background-image: url('banner.jpg');">
-  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-  <div class="relative z-10 text-center px-4 max-w-3xl">
-    <h1 class="text-4xl md:text-5xl font-extrabold mb-6 drop-shadow-lg leading-tight">
-      ProStyle — Натяжні стелі у Києві та області
-    </h1>
-    <p class="text-lg md:text-xl mb-6 drop-shadow">
-      Стильно. Якісно. З гарантією до 17 років.
-    </p>
-    <a href="#contact" class="inline-block bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-full text-lg shadow-lg transition-all duration-300">
-      Безкоштовний замір
-    </a>
-  </div>
-</section>
-
+  <!-- Hero Section -->
+  <section class="relative h-screen bg-cover bg-center text-white flex items-center justify-center" style="background-image: url('banner.jpg');">
+    <div class="absolute inset-0 bg-black opacity-40"></div>
+    <div class="relative z-10 text-center px-4">
+      <h1 class="text-5xl font-extrabold mb-6 drop-shadow-lg">ProStyle — Натяжні стелі у Києві та області</h1>
+      <p class="text-xl mb-6 drop-shadow">Стильно. Якісно. З гарантією до 17 років.</p>
+      <a href="#contact" class="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-full text-lg shadow-lg">
+        Безкоштовний замір
+      </a>
+    </div>
+  </section>
 
   <!-- About Section -->
   <section id="about" class="bg-white text-gray-800 py-20">
@@ -117,6 +89,10 @@
       </div>
     </div>
   </section>
+
+</body>
+</html>
+
 
   <!-- Representatives -->
   <section id="services" class="bg-white text-gray-800 py-20">
