@@ -125,40 +125,77 @@
 </section>
 
 <!-- Certificates Section -->
-<section id="certificates" class="bg-white text-gray-800 py-20">
-  <div class="max-w-6xl mx-auto px-6 text-center">
+<section class="bg-white text-gray-800 py-20 px-4" id="certificates">
+  <div class="max-w-6xl mx-auto text-center">
     <h2 class="text-3xl font-bold mb-10">Сертифікати якості</h2>
-    <p class="mb-10 text-lg text-gray-600">Ми співпрацюємо лише з перевіреними брендами, які мають міжнародні сертифікати безпеки, відповідності та якості.</p>
+    <p class="text-lg text-gray-700 mb-8">Ми працюємо офіційно. Всі матеріали мають сертифікати відповідності.</p>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <!-- Each image with click-to-open -->
-      <img src="kralton-sert.png" alt="Сертифікат Kralton" class="cursor-pointer shadow-lg rounded-lg" onclick="openModal(this.src)">
-      <img src="msd premium-sert.png" alt="Сертифікат MSD Premium" class="cursor-pointer shadow-lg rounded-lg" onclick="openModal(this.src)">
-      <img src="panifel-sert.jpg" alt="Сертифікат Panifel" class="cursor-pointer shadow-lg rounded-lg" onclick="openModal(this.src)">
-      <img src="teqtumeuro-sert.png" alt="Сертифікат Teqtum Euro" class="cursor-pointer shadow-lg rounded-lg" onclick="openModal(this.src)">
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
+      <img src="kralton-sert.png" alt="Kralton Сертифікат" class="cursor-pointer rounded shadow hover:scale-105 transition duration-300" onclick="openModal(this.src)" />
+      <img src="msd premium-sert.png" alt="MSD Сертифікат" class="cursor-pointer rounded shadow hover:scale-105 transition duration-300" onclick="openModal(this.src)" />
+      <img src="panifel-sert.jpg" alt="Panifel Сертифікат" class="cursor-pointer rounded shadow hover:scale-105 transition duration-300" onclick="openModal(this.src)" />
+      <img src="teqtumeuro-sert.png" alt="Teqtum Сертифікат" class="cursor-pointer rounded shadow hover:scale-105 transition duration-300" onclick="openModal(this.src)" />
     </div>
   </div>
 </section>
 
-<!-- Modal -->
-<div id="imageModal" class="fixed inset-0 z-50 bg-black bg-opacity-80 hidden items-center justify-center">
-  <span class="absolute top-4 right-6 text-white text-3xl cursor-pointer" onclick="closeModal()">×</span>
-  <img id="modalImage" class="max-h-[90vh] max-w-[90vw] rounded shadow-2xl border-4 border-white">
+<!-- Modal Viewer -->
+<div id="modal" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50">
+  <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-4xl font-bold">&times;</button>
+  <img id="modal-img" class="max-w-full max-h-[80vh] rounded shadow-xl">
+  <button onclick="prevImage()" class="absolute left-4 text-white text-5xl hover:scale-110 transition">&#10094;</button>
+  <button onclick="nextImage()" class="absolute right-4 text-white text-5xl hover:scale-110 transition">&#10095;</button>
 </div>
 
-<!-- Scripts -->
 <script>
+  const images = [
+    "kralton-sert.png",
+    "msd premium-sert.png",
+    "panifel-sert.jpg",
+    "teqtumeuro-sert.png"
+  ];
+  let currentIndex = 0;
+
   function openModal(src) {
-    document.getElementById('modalImage').src = src;
-    document.getElementById('imageModal').classList.remove('hidden');
-    document.getElementById('imageModal').classList.add('flex');
+    document.getElementById('modal').classList.remove('hidden');
+    document.getElementById('modal-img').src = src;
+    currentIndex = images.indexOf(src.split('/').pop());
   }
 
   function closeModal() {
-    document.getElementById('imageModal').classList.remove('flex');
-    document.getElementById('imageModal').classList.add('hidden');
+    document.getElementById('modal').classList.add('hidden');
+  }
+
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    document.getElementById('modal-img').src = images[currentIndex];
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    document.getElementById('modal-img').src = images[currentIndex];
+  }
+
+  // Swipe support for mobile
+  let touchStartX = 0;
+  let touchEndX = 0;
+  const modal = document.getElementById('modal');
+
+  modal.addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+
+  modal.addEventListener('touchend', e => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  });
+
+  function handleSwipe() {
+    if (touchEndX < touchStartX - 50) nextImage();
+    if (touchEndX > touchStartX + 50) prevImage();
   }
 </script>
+
 
 
 <!-- Services and Prices -->
