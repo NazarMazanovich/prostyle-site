@@ -13,20 +13,15 @@
 <body class="m-0 p-0 text-white">
 
 <!-- Header -->
-<header id="mainHeader" class="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-40 transition-all duration-300">
-  <div class="flex items-center justify-between px-6 md:px-10 py-4 md:py-6 transition-all duration-300">
+<header id="mainHeader" class="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-40 transition-all duration-300 py-4">
+  <div id="headerContent" class="flex items-center justify-between px-6 transition-all duration-300">
     <!-- Логотип -->
-    <a href="index.html" class="text-white text-xl md:text-2xl font-bold leading-tight">
-      <div class="text-center md:text-left">
-        <span class="block">ProStyle</span>
-        <span class="block text-sm md:text-base text-gray-400" style="font-family: 'Segoe UI', sans-serif;">професіоналізм і стиль</span>
-      </div>
+    <a href="index.html" class="text-white font-bold leading-tight text-xl md:text-2xl transition-all duration-300" id="logoText">
+      <span>ProStyle — <span class="italic font-normal text-gray-400 text-sm md:text-base" style="font-family: 'Segoe UI', sans-serif;">професіоналізм і стиль</span></span>
     </a>
 
-    <!-- Бургер-кнопка -->
-    <button id="burgerBtn" class="md:hidden text-white text-3xl focus:outline-none z-50">
-      &#9776;
-    </button>
+    <!-- Кнопка бургер-меню -->
+    <button id="burgerBtn" class="md:hidden text-white text-3xl z-50">&#9776;</button>
 
     <!-- Навігація (десктоп) -->
     <nav class="hidden md:flex space-x-6 text-sm font-medium uppercase text-white">
@@ -40,31 +35,29 @@
     </nav>
 
     <!-- Контакти (десктоп) -->
-    <div class="hidden md:flex items-center space-x-4 text-sm">
+    <div class="hidden md:flex items-center space-x-4 text-sm text-white">
       <span class="text-green-400">UA</span>
       <span class="text-gray-300">RU</span>
       <span class="font-semibold">(067) 134-12-44</span>
     </div>
   </div>
 
-  <!-- Бургер-меню (мобільне) -->
-  <div id="mobileMenu" class="fixed inset-0 bg-black bg-opacity-95 z-40 hidden flex flex-col items-center justify-center text-white text-2xl space-y-6 uppercase transition-all duration-300">
+  <!-- Мобільне меню -->
+  <div id="mobileMenu" class="fixed inset-0 bg-black bg-opacity-95 text-white text-xl flex flex-col items-center justify-center space-y-6 z-40 hidden transition-opacity duration-300">
     <!-- Хрестик -->
-    <button id="closeMenu" class="absolute top-6 left-6 text-white text-3xl">
-      &times;
-    </button>
+    <button id="menuClose" class="absolute top-4 left-6 text-3xl hover:text-yellow-400">&times;</button>
 
-    <!-- Меню -->
-    <a href="#about" onclick="closeMobileMenu()" class="hover:text-yellow-400">Про нас</a>
-    <a href="#sales" onclick="closeMobileMenu()" class="hover:text-yellow-400">Акції</a>
-    <a href="#services" onclick="closeMobileMenu()" class="hover:text-yellow-400">Послуги та ціни</a>
-    <a href="#examples" onclick="closeMobileMenu()" class="hover:text-yellow-400">Приклади робіт</a>
-    <a href="#blog" onclick="closeMobileMenu()" class="hover:text-yellow-400">Блог</a>
-    <a href="#reviews" onclick="closeMobileMenu()" class="hover:text-yellow-400">Відгуки</a>
-    <a href="#contacts" onclick="closeMobileMenu()" class="hover:text-yellow-400">Контакти</a>
+    <!-- Пункти -->
+    <a href="#about" onclick="closeMenu()" class="hover:text-yellow-400">Про нас</a>
+    <a href="#sales" onclick="closeMenu()" class="hover:text-yellow-400">Акції</a>
+    <a href="#services" onclick="closeMenu()" class="hover:text-yellow-400">Послуги та ціни</a>
+    <a href="#examples" onclick="closeMenu()" class="hover:text-yellow-400">Приклади робіт</a>
+    <a href="#blog" onclick="closeMenu()" class="hover:text-yellow-400">Блог</a>
+    <a href="#reviews" onclick="closeMenu()" class="hover:text-yellow-400">Відгуки</a>
+    <a href="#contacts" onclick="closeMenu()" class="hover:text-yellow-400">Контакти</a>
 
-    <!-- Контакти мобільні -->
-    <div class="mt-8 text-lg space-x-4">
+    <!-- Контакти -->
+    <div class="flex space-x-4 text-base mt-6">
       <span class="text-green-400">UA</span>
       <span class="text-gray-300">RU</span>
       <span class="font-semibold">(067) 134-12-44</span>
@@ -72,35 +65,41 @@
   </div>
 </header>
 
-<!-- Скрипт -->
+<!-- JavaScript -->
 <script>
-  const burgerBtn = document.getElementById('burgerBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const closeBtn = document.getElementById('closeMenu');
-  const header = document.getElementById('mainHeader');
+  const burgerBtn = document.getElementById("burgerBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const closeBtn = document.getElementById("menuClose");
+  const header = document.getElementById("mainHeader");
+  const logoText = document.getElementById("logoText");
 
-  burgerBtn.addEventListener('click', () => {
-    mobileMenu.classList.remove('hidden');
+  burgerBtn.addEventListener("click", () => {
+    mobileMenu.classList.remove("hidden");
+    setTimeout(() => mobileMenu.classList.add("opacity-100"), 10);
   });
 
-  function closeMobileMenu() {
-    mobileMenu.classList.add('hidden');
+  function closeMenu() {
+    mobileMenu.classList.remove("opacity-100");
+    setTimeout(() => mobileMenu.classList.add("hidden"), 300);
   }
 
-  closeBtn.addEventListener('click', closeMobileMenu);
+  closeBtn.addEventListener("click", closeMenu);
 
   // Зменшення хедера при скролі
-  window.addEventListener('scroll', () => {
+  window.addEventListener("scroll", () => {
     if (window.scrollY > 50) {
-      header.classList.add('py-2');
-      header.classList.remove('py-4');
+      header.classList.add("py-2");
+      header.classList.remove("py-4");
+      logoText.classList.add("text-base");
+      logoText.classList.remove("text-xl", "md:text-2xl");
     } else {
-      header.classList.remove('py-2');
-      header.classList.add('py-4');
+      header.classList.remove("py-2");
+      header.classList.add("py-4");
+      logoText.classList.remove("text-base");
+      logoText.classList.add("text-xl", "md:text-2xl");
     }
   });
 </script>
-
 
 
   <!-- Hero Section -->
