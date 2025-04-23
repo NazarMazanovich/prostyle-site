@@ -129,11 +129,15 @@
   <div class="max-w-6xl mx-auto text-center">
     <h2 class="text-3xl font-bold mb-4">Сертифікати якості</h2>
     <p class="text-lg mb-10">Ми працюємо офіційно. Всі матеріали мають сертифікати відповідності.</p>
-    <div class="flex flex-wrap justify-center gap-6">
-      <img src="kralton-sert.png" alt="Сертифікат Kralton" class="cert-image w-40 h-auto cursor-pointer rounded shadow" />
-      <img src="msd premium-sert.png" alt="Сертифікат MSD Premium" class="cert-image w-40 h-auto cursor-pointer rounded shadow" />
-      <img src="panifel-sert.jpg" alt="Сертифікат Panifel" class="cert-image w-40 h-auto cursor-pointer rounded shadow" />
-      <img src="teqtumeuro-sert.png" alt="Сертифікат Teqtum" class="cert-image w-40 h-auto cursor-pointer rounded shadow" />
+
+    <!-- Горизонтальна стрічка -->
+    <div class="overflow-x-auto whitespace-nowrap scroll-smooth scrollbar-hide">
+      <div class="inline-flex gap-6 px-4">
+        <img src="kralton-sert.png" alt="Сертифікат Kralton" class="cert-image w-52 h-auto cursor-pointer rounded shadow" />
+        <img src="msd premium-sert.png" alt="Сертифікат MSD Premium" class="cert-image w-52 h-auto cursor-pointer rounded shadow" />
+        <img src="panifel-sert.jpg" alt="Сертифікат Panifel" class="cert-image w-52 h-auto cursor-pointer rounded shadow" />
+        <img src="teqtumeuro-sert.png" alt="Сертифікат Teqtum" class="cert-image w-52 h-auto cursor-pointer rounded shadow" />
+      </div>
     </div>
   </div>
 
@@ -181,21 +185,25 @@
     modalImg.src = images[currentIndex].src;
   });
 
-  // Swipe on mobile
-  let startX = 0;
-  modalImg.addEventListener('touchstart', e => {
-    startX = e.touches[0].clientX;
-  });
-
+  modalImg.addEventListener('touchstart', e => startX = e.touches[0].clientX);
   modalImg.addEventListener('touchend', e => {
     let endX = e.changedTouches[0].clientX;
-    if (startX - endX > 50) {
-      nextBtn.click();
-    } else if (endX - startX > 50) {
-      prevBtn.click();
-    }
+    if (startX - endX > 50) nextBtn.click();
+    else if (endX - startX > 50) prevBtn.click();
   });
 </script>
+
+<!-- Scrollbar hide (Tailwind plugin) -->
+<style>
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
 
 
 <!-- Services and Prices -->
