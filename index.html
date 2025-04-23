@@ -13,15 +13,18 @@
 <body class="m-0 p-0 text-white">
 
 <!-- Header -->
-<header class="absolute top-0 left-0 w-full z-50 flex items-center justify-between px-6 py-4 bg-black bg-opacity-40">
-  <div class="text-white font-bold text-xl">ProStyle <span class="text-sm font-normal italic text-gray-300">— професіоналізм і стиль</span></div>
+<header class="absolute top-0 left-0 w-full z-20 flex items-center justify-between px-6 py-4 bg-black bg-opacity-40">
+  <!-- Логотип -->
+  <a href="index.html" class="text-white text-xl font-bold flex items-center space-x-2 z-30">
+    <span>ProStyle — <span class="italic font-normal">професіоналізм і стиль</span></span>
+  </a>
 
-  <!-- Бургер кнопка -->
-  <button onclick="toggleMenu()" class="md:hidden text-white text-3xl focus:outline-none">
+  <!-- Бургер-кнопка -->
+  <button id="menu-toggle" class="text-white text-3xl z-30 md:hidden focus:outline-none">
     &#9776;
   </button>
 
-  <!-- Десктоп меню -->
+  <!-- Навігація (десктоп) -->
   <nav class="hidden md:flex space-x-6 text-sm font-medium uppercase text-white">
     <a href="#about" class="hover:text-yellow-400">Про нас</a>
     <a href="#sales" class="hover:text-yellow-400">Акції</a>
@@ -32,52 +35,53 @@
     <a href="#contacts" class="hover:text-yellow-400">Контакти</a>
   </nav>
 
-  <!-- Контакти на десктопі -->
+  <!-- Мова та телефон -->
   <div class="hidden md:flex items-center space-x-4 text-sm text-white">
     <span class="text-green-400">UA</span>
     <span class="text-gray-300">RU</span>
     <span class="font-semibold">(000) 000-00-00</span>
   </div>
+
+  <!-- Мобільне меню -->
+  <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-95 text-white text-xl flex flex-col items-center justify-center space-y-6 z-20 hidden transition-opacity duration-300">
+    <!-- Хрестик -->
+    <button id="menu-close" class="absolute top-4 right-6 text-3xl hover:text-yellow-400">&times;</button>
+
+    <a href="#about" class="hover:text-yellow-400" onclick="closeMenu()">Про нас</a>
+    <a href="#sales" class="hover:text-yellow-400" onclick="closeMenu()">Акції</a>
+    <a href="#services" class="hover:text-yellow-400" onclick="closeMenu()">Послуги та ціни</a>
+    <a href="#examples" class="hover:text-yellow-400" onclick="closeMenu()">Приклади робіт</a>
+    <a href="#blog" class="hover:text-yellow-400" onclick="closeMenu()">Блог</a>
+    <a href="#reviews" class="hover:text-yellow-400" onclick="closeMenu()">Відгуки</a>
+    <a href="#contacts" class="hover:text-yellow-400" onclick="closeMenu()">Контакти</a>
+
+    <div class="flex space-x-4 text-base mt-6">
+      <span class="text-green-400">UA</span>
+      <span class="text-gray-300">RU</span>
+      <span class="font-semibold">(000) 000-00-00</span>
+    </div>
+  </div>
 </header>
 
-<!-- Мобільне меню -->
-<div id="mobileMenu" class="fixed inset-0 bg-black bg-opacity-90 hidden z-50 flex flex-col justify-center items-center space-y-6 text-white text-xl font-semibold animate-fade-in">
-  <!-- Хрестик -->
-  <button onclick="toggleMenu()" class="absolute top-5 right-6 text-white text-3xl">&times;</button>
-
-  <a href="#about" onclick="toggleMenu()">Про нас</a>
-  <a href="#sales" onclick="toggleMenu()">Акції</a>
-  <a href="#services" onclick="toggleMenu()">Послуги та ціни</a>
-  <a href="#examples" onclick="toggleMenu()">Приклади робіт</a>
-  <a href="#blog" onclick="toggleMenu()">Блог</a>
-  <a href="#reviews" onclick="toggleMenu()">Відгуки</a>
-  <a href="#contacts" onclick="toggleMenu()">Контакти</a>
-
-  <div class="flex space-x-4 text-sm pt-4">
-    <span class="text-green-400">UA</span>
-    <span class="text-gray-300">RU</span>
-    <span class="font-semibold">(000) 000-00-00</span>
-  </div>
-</div>
-
-<!-- Скрипт -->
+<!-- JavaScript для меню -->
 <script>
-  function toggleMenu() {
-    const menu = document.getElementById("mobileMenu");
-    menu.classList.toggle("hidden");
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  const closeBtn = document.getElementById("menu-close");
+
+  toggle.addEventListener("click", () => {
+    menu.classList.remove("hidden");
+    setTimeout(() => menu.classList.add("opacity-100"), 10);
+  });
+
+  function closeMenu() {
+    menu.classList.remove("opacity-100");
+    setTimeout(() => menu.classList.add("hidden"), 300);
   }
+
+  closeBtn.addEventListener("click", closeMenu);
 </script>
 
-<!-- Анімація -->
-<style>
-  @keyframes fade-in {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
-  }
-  .animate-fade-in {
-    animation: fade-in 0.3s ease-out;
-  }
-</style>
 
 
 
