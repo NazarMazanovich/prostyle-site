@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 100 100">
+
+  <!-- Щит як у "Стиль і якість" -->
+  <path d="M50,5 L20,20 V45 Q20,70 50,95 Q80,70 80,45 V20 L50,5 Z"
+        fill="none" stroke="#000" stroke-width="3"/>
+
+  <!-- Стебло -->
+  <path d="M50,58 Q48,48 50,38 Q52,48 50,58" fill="#4CAF50"/>
+
+  <!-- Лівий листок -->
+  <path d="M50,38 Q40,33 30,38 Q40,43 50,38 Z" fill="#4CAF50" stroke="#2E7D32" stroke-width="1"/>
+
+  <!-- Правий листок -->
+  <path d="M50,38 Q60,33 70,38 Q60,43 50,38 Z" fill="#4CAF50" stroke="#2E7D32" stroke-width="1"/>
+</svg>
