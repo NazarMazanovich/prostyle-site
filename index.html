@@ -299,9 +299,18 @@
   <button onclick="navigateLightbox(1)" class="absolute right-5 text-white text-4xl hover:scale-110 transition">&#10095;</button>
 </div>
 
+<!-- СКРИПТ -->
 <script>
-  const galleryImages = Array.from(document.querySelectorAll('#gallery img'));
+  let galleryImages = [];
   let currentIndex = 0;
+
+  window.onload = () => {
+    galleryImages = Array.from(document.querySelectorAll('#gallery img'));
+    window.scrollGallery = scrollGallery;
+    window.openLightbox = openLightbox;
+    window.closeLightbox = closeLightbox;
+    window.navigateLightbox = navigateLightbox;
+  };
 
   function scrollGallery(direction) {
     const gallery = document.getElementById('gallery');
@@ -324,28 +333,6 @@
   }
 </script>
 
-<style>
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  @keyframes fade-in {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .animate-fade-in {
-    animation: fade-in 0.8s ease-out forwards;
-    opacity: 0;
-  }
-  .animate-fade-in.delay-100 { animation-delay: 0.1s; }
-  .animate-fade-in.delay-200 { animation-delay: 0.2s; }
-  .animate-fade-in.delay-300 { animation-delay: 0.3s; }
-  .animate-fade-in.delay-400 { animation-delay: 0.4s; }
-  .animate-fade-in.delay-500 { animation-delay: 0.5s; }
-</style>
 
 <!-- Reviews Section -->
 <section id="reviews" class="bg-white text-gray-800 py-20">
