@@ -13,13 +13,13 @@
 <body class="m-0 p-0 text-white">
 
 <!-- Header -->
-<header id="mainHeader" class="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-40 transition-all duration-300">
-  <div class="flex items-center justify-between px-6 md:px-10 py-4 md:py-6">
+<header id="mainHeader" class="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-40 transition-all duration-300 py-4 md:py-6">
+  <div class="flex items-center justify-between px-6 md:px-10 transition-all duration-300" id="headerContent">
     <!-- Логотип -->
-    <a href="index.html" class="text-white text-xl md:text-2xl font-bold leading-tight">
-      <div class="text-center md:text-left">
-        <span class="block">ProStyle</span>
-        <span class="block text-sm md:text-base text-gray-400" style="font-family: 'Segoe UI', sans-serif;">професіоналізм і стиль</span>
+    <a href="index.html" class="text-white font-bold leading-tight transition-all duration-300" id="logoBlock">
+      <div class="text-center md:text-left leading-tight">
+        <span class="block text-xl md:text-2xl" id="logoMain">ProStyle</span>
+        <span class="block text-sm md:text-base text-gray-400" style="font-family: 'Segoe UI', sans-serif;" id="logoSub">професіоналізм і стиль</span>
       </div>
     </a>
 
@@ -29,7 +29,7 @@
     </button>
 
     <!-- Навігація (десктоп) -->
-    <nav class="hidden md:flex space-x-6 text-sm font-medium uppercase text-white">
+    <nav class="hidden md:flex space-x-6 text-sm font-medium uppercase text-white transition-all duration-300" id="desktopNav">
       <a href="#about" class="hover:text-yellow-400">Про нас</a>
       <a href="#sales" class="hover:text-yellow-400">Акції</a>
       <a href="#services" class="hover:text-yellow-400">Послуги та ціни</a>
@@ -39,16 +39,16 @@
       <a href="#contacts" class="hover:text-yellow-400">Контакти</a>
     </nav>
 
-    <!-- Контактна інформація (десктоп) -->
-    <div class="hidden md:flex items-center space-x-4 text-sm">
+    <!-- Контакти -->
+    <div class="hidden md:flex items-center space-x-4 text-sm" id="contactsBlock">
       <span class="text-green-400">UA</span>
       <span class="text-gray-300">RU</span>
       <span class="font-semibold">(067) 134-12-44</span>
     </div>
   </div>
 
-  <!-- Бургер-меню (мобільне, повноекранне) -->
-  <div id="mobileMenu" class="fixed inset-0 bg-black bg-opacity-95 z-40 hidden flex-col items-center justify-center text-white text-2xl uppercase space-y-6 transition-all duration-300">
+  <!-- Мобільне меню -->
+  <div id="mobileMenu" class="fixed inset-0 bg-black bg-opacity-95 z-40 hidden flex-col items-center justify-center text-white text-2xl uppercase space-y-6 text-center">
     <!-- Хрестик -->
     <button id="closeMenu" class="absolute top-6 left-6 text-white text-3xl">
       &times;
@@ -71,6 +71,9 @@
   const mobileMenu = document.getElementById('mobileMenu');
   const closeBtn = document.getElementById('closeMenu');
   const header = document.getElementById('mainHeader');
+  const logoMain = document.getElementById('logoMain');
+  const logoSub = document.getElementById('logoSub');
+  const headerContent = document.getElementById('headerContent');
 
   burgerBtn.addEventListener('click', () => {
     mobileMenu.classList.remove('hidden');
@@ -86,13 +89,26 @@
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
       header.classList.add('py-2');
-      header.classList.remove('py-4');
+      header.classList.remove('py-4', 'md:py-6');
+
+      logoMain.classList.remove('text-xl', 'md:text-2xl');
+      logoMain.classList.add('text-base', 'md:text-lg');
+
+      logoSub.classList.remove('text-sm', 'md:text-base');
+      logoSub.classList.add('text-xs', 'md:text-sm');
     } else {
       header.classList.remove('py-2');
-      header.classList.add('py-4');
+      header.classList.add('py-4', 'md:py-6');
+
+      logoMain.classList.add('text-xl', 'md:text-2xl');
+      logoMain.classList.remove('text-base', 'md:text-lg');
+
+      logoSub.classList.add('text-sm', 'md:text-base');
+      logoSub.classList.remove('text-xs', 'md:text-sm');
     }
   });
 </script>
+
 
 
 
