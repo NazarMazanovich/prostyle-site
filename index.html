@@ -13,14 +13,38 @@
 <body class="m-0 p-0 text-white">
 
  <!-- Header -->
-<header class="absolute top-0 left-0 w-full z-20 flex items-center justify-between px-10 py-4 bg-black bg-opacity-40">
-  <!-- Текстовий логотип -->
-  <a href="index.html" class="text-white text-2xl font-extrabold tracking-wide hover:text-yellow-400 transition">
-    ProStyle <span class="italic font-normal text-base text-gray-300">— професіоналізм і стиль</span>
-  </a>
+<header class="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-40 text-white">
+  <div class="flex items-center justify-between px-4 py-3 md:px-10 md:py-4">
+    
+    <!-- Назва компанії -->
+    <a href="index.html" class="text-xl md:text-2xl font-bold tracking-wide whitespace-nowrap">
+      ProStyle <span class="hidden sm:inline text-sm italic text-gray-300 font-normal">— професіоналізм і стиль</span>
+    </a>
 
-  <!-- Навігація -->
-  <nav class="space-x-6 text-sm font-medium uppercase text-white">
+    <!-- Бургер-меню кнопка (мобілка) -->
+    <button class="md:hidden text-white text-2xl" onclick="toggleMenu()">☰</button>
+
+    <!-- Навігація для десктопу -->
+    <nav class="hidden md:flex space-x-6 text-sm font-medium uppercase">
+      <a href="#about" class="hover:text-yellow-400">Про нас</a>
+      <a href="#sales" class="hover:text-yellow-400">Акції</a>
+      <a href="#services" class="hover:text-yellow-400">Послуги та ціни</a>
+      <a href="#examples" class="hover:text-yellow-400">Приклади робіт</a>
+      <a href="#blog" class="hover:text-yellow-400">Блог</a>
+      <a href="#reviews" class="hover:text-yellow-400">Відгуки</a>
+      <a href="#contacts" class="hover:text-yellow-400">Контакти</a>
+    </nav>
+
+    <!-- Контакти та мови для десктопу -->
+    <div class="hidden md:flex items-center space-x-4 text-sm">
+      <span class="text-green-400">UA</span>
+      <span class="text-gray-300">RU</span>
+      <span class="font-semibold">(000) 000-00-00</span>
+    </div>
+  </div>
+
+  <!-- Меню для мобілки -->
+  <nav id="mobileMenu" class="hidden flex-col space-y-4 text-lg px-6 py-4 bg-black bg-opacity-90 md:hidden">
     <a href="#about" class="hover:text-yellow-400">Про нас</a>
     <a href="#sales" class="hover:text-yellow-400">Акції</a>
     <a href="#services" class="hover:text-yellow-400">Послуги та ціни</a>
@@ -28,15 +52,22 @@
     <a href="#blog" class="hover:text-yellow-400">Блог</a>
     <a href="#reviews" class="hover:text-yellow-400">Відгуки</a>
     <a href="#contacts" class="hover:text-yellow-400">Контакти</a>
+    <div class="mt-4 flex justify-between text-sm text-gray-300">
+      <span>UA</span>
+      <span>RU</span>
+      <span>(000) 000-00-00</span>
+    </div>
   </nav>
-
-  <!-- Мова та телефон -->
-  <div class="flex items-center space-x-4 text-sm text-white">
-    <span class="text-green-400">UA</span>
-    <span class="text-gray-300">RU</span>
-    <span class="font-semibold">(000) 000-00-00</span>
-  </div>
 </header>
+
+<!-- Script для бургер-меню -->
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+    menu.classList.toggle("hidden");
+  }
+</script>
+
 
 
 
