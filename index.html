@@ -133,23 +133,36 @@
   <div class="max-w-6xl mx-auto px-6 text-center">
     <h2 class="text-3xl font-bold mb-10">Сертифікати якості</h2>
     <p class="mb-10 text-lg text-gray-600">Ми співпрацюємо лише з перевіреними брендами, які мають міжнародні сертифікати безпеки, відповідності та якості.</p>
-    
+
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="shadow-lg rounded-lg overflow-hidden">
-        <img src="kralton-sert.png" alt="Сертифікат Kralton" class="w-full h-auto">
-      </div>
-      <div class="shadow-lg rounded-lg overflow-hidden">
-        <img src="msd premium-sert.png" alt="Сертифікат MSD Premium" class="w-full h-auto">
-      </div>
-      <div class="shadow-lg rounded-lg overflow-hidden">
-        <img src="panifel-sert.jpg" alt="Сертифікат Panifel" class="w-full h-auto">
-      </div>
-      <div class="shadow-lg rounded-lg overflow-hidden">
-        <img src="teqtumeuro-sert.png" alt="Сертифікат Teqtum Euro" class="w-full h-auto">
-      </div>
+      <!-- Each image with click-to-open -->
+      <img src="kralton-sert.png" alt="Сертифікат Kralton" class="cursor-pointer shadow-lg rounded-lg" onclick="openModal(this.src)">
+      <img src="msd premium-sert.png" alt="Сертифікат MSD Premium" class="cursor-pointer shadow-lg rounded-lg" onclick="openModal(this.src)">
+      <img src="panifel-sert.jpg" alt="Сертифікат Panifel" class="cursor-pointer shadow-lg rounded-lg" onclick="openModal(this.src)">
+      <img src="teqtumeuro-sert.png" alt="Сертифікат Teqtum Euro" class="cursor-pointer shadow-lg rounded-lg" onclick="openModal(this.src)">
     </div>
   </div>
 </section>
+
+<!-- Modal -->
+<div id="imageModal" class="fixed inset-0 z-50 bg-black bg-opacity-80 hidden items-center justify-center">
+  <span class="absolute top-4 right-6 text-white text-3xl cursor-pointer" onclick="closeModal()">×</span>
+  <img id="modalImage" class="max-h-[90vh] max-w-[90vw] rounded shadow-2xl border-4 border-white">
+</div>
+
+<!-- Scripts -->
+<script>
+  function openModal(src) {
+    document.getElementById('modalImage').src = src;
+    document.getElementById('imageModal').classList.remove('hidden');
+    document.getElementById('imageModal').classList.add('flex');
+  }
+
+  function closeModal() {
+    document.getElementById('imageModal').classList.remove('flex');
+    document.getElementById('imageModal').classList.add('hidden');
+  }
+</script>
 
 
 <!-- Services and Prices -->
