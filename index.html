@@ -13,18 +13,22 @@
 <body class="m-0 p-0 text-white">
 
 <!-- Header -->
-<header id="header" class="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-50 px-6 py-4 transition-all duration-300">
-  <div class="flex items-center justify-between">
-    <!-- Logo -->
-    <a href="index.html" class="flex items-center space-x-3 text-white">
-      <img src="prostyle-logo.png" alt="ProStyle" class="h-10 w-auto" />
-      <div>
-        <span class="block font-bold text-xl">ProStyle</span>
-        <span class="block text-sm text-gray-300" style="font-family: 'Segoe UI', sans-serif;">професіоналізм і стиль</span>
+<header id="mainHeader" class="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-40 transition-all duration-300">
+  <div class="flex items-center justify-between px-6 md:px-10 py-4 md:py-6">
+    <!-- Логотип -->
+    <a href="index.html" class="text-white text-xl md:text-2xl font-bold leading-tight">
+      <div class="text-center md:text-left">
+        <span class="block">ProStyle</span>
+        <span class="block text-sm md:text-base text-gray-400" style="font-family: 'Segoe UI', sans-serif;">професіоналізм і стиль</span>
       </div>
     </a>
 
-    <!-- Desktop Nav -->
+    <!-- Бургер-кнопка (мобільна) -->
+    <button id="burgerBtn" class="md:hidden text-white text-3xl focus:outline-none z-50">
+      &#9776;
+    </button>
+
+    <!-- Навігація (десктоп) -->
     <nav class="hidden md:flex space-x-6 text-sm font-medium uppercase text-white">
       <a href="#about" class="hover:text-yellow-400">Про нас</a>
       <a href="#sales" class="hover:text-yellow-400">Акції</a>
@@ -35,46 +39,50 @@
       <a href="#contacts" class="hover:text-yellow-400">Контакти</a>
     </nav>
 
-    <!-- Burger button -->
-    <button id="burger" class="md:hidden text-white text-3xl focus:outline-none">&#9776;</button>
+    <!-- Контактна інформація (десктоп) -->
+    <div class="hidden md:flex items-center space-x-4 text-sm">
+      <span class="text-green-400">UA</span>
+      <span class="text-gray-300">RU</span>
+      <span class="font-semibold">(067) 134-12-44</span>
+    </div>
   </div>
 
-  <!-- Mobile Menu -->
-  <div id="mobileMenu" class="fixed inset-0 bg-black bg-opacity-95 text-white flex-col justify-center items-center hidden z-50">
-    <button id="closeMenu" class="absolute top-5 left-5 text-3xl text-white">&times;</button>
-    <nav class="flex flex-col items-center space-y-6 text-lg uppercase font-semibold">
-      <a href="#about" class="hover:text-yellow-400">Про нас</a>
-      <a href="#sales" class="hover:text-yellow-400">Акції</a>
-      <a href="#services" class="hover:text-yellow-400">Послуги та ціни</a>
-      <a href="#examples" class="hover:text-yellow-400">Приклади робіт</a>
-      <a href="#blog" class="hover:text-yellow-400">Блог</a>
-      <a href="#reviews" class="hover:text-yellow-400">Відгуки</a>
-      <a href="#contacts" class="hover:text-yellow-400">Контакти</a>
-    </nav>
+  <!-- Бургер-меню (мобільне, повноекранне) -->
+  <div id="mobileMenu" class="fixed inset-0 bg-black bg-opacity-95 z-40 hidden flex-col items-center justify-center text-white text-2xl uppercase space-y-6 transition-all duration-300">
+    <!-- Хрестик -->
+    <button id="closeMenu" class="absolute top-6 left-6 text-white text-3xl">
+      &times;
+    </button>
+
+    <!-- Пункти меню -->
+    <a href="#about" class="hover:text-yellow-400" onclick="closeMobileMenu()">Про нас</a>
+    <a href="#sales" class="hover:text-yellow-400" onclick="closeMobileMenu()">Акції</a>
+    <a href="#services" class="hover:text-yellow-400" onclick="closeMobileMenu()">Послуги та ціни</a>
+    <a href="#examples" class="hover:text-yellow-400" onclick="closeMobileMenu()">Приклади робіт</a>
+    <a href="#blog" class="hover:text-yellow-400" onclick="closeMobileMenu()">Блог</a>
+    <a href="#reviews" class="hover:text-yellow-400" onclick="closeMobileMenu()">Відгуки</a>
+    <a href="#contacts" class="hover:text-yellow-400" onclick="closeMobileMenu()">Контакти</a>
   </div>
 </header>
 
+<!-- Скрипт -->
 <script>
-  const header = document.getElementById('header');
-  const burger = document.getElementById('burger');
+  const burgerBtn = document.getElementById('burgerBtn');
   const mobileMenu = document.getElementById('mobileMenu');
-  const closeMenu = document.getElementById('closeMenu');
-  const menuLinks = mobileMenu.querySelectorAll('a');
+  const closeBtn = document.getElementById('closeMenu');
+  const header = document.getElementById('mainHeader');
 
-  burger.addEventListener('click', () => {
+  burgerBtn.addEventListener('click', () => {
     mobileMenu.classList.remove('hidden');
   });
 
-  closeMenu.addEventListener('click', () => {
+  function closeMobileMenu() {
     mobileMenu.classList.add('hidden');
-  });
+  }
 
-  menuLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.add('hidden');
-    });
-  });
+  closeBtn.addEventListener('click', closeMobileMenu);
 
+  // Ефект зменшення хедера при скролі
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
       header.classList.add('py-2');
@@ -85,6 +93,7 @@
     }
   });
 </script>
+
 
 
 
