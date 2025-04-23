@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 100 100">
+  <!-- Корпус -->
+  <rect x="28" y="42" width="44" height="28" rx="4" ry="4" fill="#ECECEC" stroke="#000" stroke-width="2"/>
+
+  <!-- Кришка -->
+  <path d="M28 42 H72 V50 H28 Z" fill="#FFA500" stroke="#000" stroke-width="1.5"/>
+
+  <!-- Тінь під кришкою -->
+  <line x1="28" y1="50" x2="72" y2="50" stroke="#999" stroke-width="1"/>
+
+  <!-- Ручка -->
+  <rect x="43" y="34" width="14" height="6" rx="1.5" ry="1.5" fill="#000"/>
+
+  <!-- Засувки -->
+  <rect x="34" y="48" width="4" height="8" rx="1" ry="1" fill="#888"/>
+  <rect x="62" y="48" width="4" height="8" rx="1" ry="1" fill="#888"/>
+</svg>
