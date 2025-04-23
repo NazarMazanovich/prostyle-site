@@ -13,44 +13,16 @@
 <body class="m-0 p-0 text-white">
 
 <!-- Header -->
-<header class="absolute top-0 left-0 w-full z-50 bg-black bg-opacity-40 text-white">
-  <div class="flex items-center justify-between px-6 py-4">
-    <!-- Назва -->
-    <a href="index.html" class="text-xl font-bold">ProStyle</a>
+<header class="absolute top-0 left-0 w-full z-50 flex items-center justify-between px-6 py-4 bg-black bg-opacity-40">
+  <div class="text-white font-bold text-xl">ProStyle <span class="text-sm font-normal italic text-gray-300">— професіоналізм і стиль</span></div>
 
-    <!-- Бургер-кнопка -->
-    <button id="burger" class="md:hidden focus:outline-none">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
-    </button>
+  <!-- Бургер кнопка -->
+  <button onclick="toggleMenu()" class="md:hidden text-white text-3xl focus:outline-none">
+    &#9776;
+  </button>
 
-    <!-- Десктоп-навігація -->
-    <nav class="hidden md:flex space-x-6 text-sm font-medium uppercase">
-      <a href="#about" class="hover:text-yellow-400">Про нас</a>
-      <a href="#sales" class="hover:text-yellow-400">Акції</a>
-      <a href="#services" class="hover:text-yellow-400">Послуги та ціни</a>
-      <a href="#examples" class="hover:text-yellow-400">Приклади робіт</a>
-      <a href="#blog" class="hover:text-yellow-400">Блог</a>
-      <a href="#reviews" class="hover:text-yellow-400">Відгуки</a>
-      <a href="#contacts" class="hover:text-yellow-400">Контакти</a>
-    </nav>
-
-    <!-- Контакт + мова -->
-    <div class="hidden md:flex items-center space-x-4 text-sm">
-      <span class="text-green-400">UA</span>
-      <span class="text-gray-300">RU</span>
-      <span class="font-semibold">(000) 000-00-00</span>
-    </div>
-  </div>
-
-  <!-- Мобільне меню -->
-  <div id="mobileMenu" class="fixed inset-0 bg-black bg-opacity-95 flex-col items-center justify-center space-y-6 text-xl font-semibold z-50 hidden opacity-0 transition-opacity duration-300">
-    <!-- Хрестик -->
-    <button id="closeMenu" class="absolute top-6 right-6 text-white text-3xl font-bold">&times;</button>
-
-    <!-- Посилання -->
+  <!-- Навігація для десктопа -->
+  <nav class="hidden md:flex space-x-6 text-sm font-medium uppercase text-white">
     <a href="#about" class="hover:text-yellow-400">Про нас</a>
     <a href="#sales" class="hover:text-yellow-400">Акції</a>
     <a href="#services" class="hover:text-yellow-400">Послуги та ціни</a>
@@ -58,45 +30,54 @@
     <a href="#blog" class="hover:text-yellow-400">Блог</a>
     <a href="#reviews" class="hover:text-yellow-400">Відгуки</a>
     <a href="#contacts" class="hover:text-yellow-400">Контакти</a>
+  </nav>
 
-    <div class="flex space-x-4 text-sm pt-4">
-      <span class="text-green-400">UA</span>
-      <span class="text-gray-300">RU</span>
-      <span class="font-semibold">(000) 000-00-00</span>
-    </div>
+  <!-- Телефон та мови -->
+  <div class="hidden md:flex items-center space-x-4 text-sm text-white">
+    <span class="text-green-400">UA</span>
+    <span class="text-gray-300">RU</span>
+    <span class="font-semibold">(000) 000-00-00</span>
   </div>
-
-  <!-- JS -->
-  <script>
-    const burger = document.getElementById("burger");
-    const mobileMenu = document.getElementById("mobileMenu");
-    const closeBtn = document.getElementById("closeMenu");
-
-    function openMenu() {
-      mobileMenu.classList.remove("hidden");
-      setTimeout(() => {
-        mobileMenu.classList.remove("opacity-0");
-        mobileMenu.classList.add("opacity-100");
-      }, 10);
-    }
-
-    function closeMenu() {
-      mobileMenu.classList.remove("opacity-100");
-      mobileMenu.classList.add("opacity-0");
-      setTimeout(() => {
-        mobileMenu.classList.add("hidden");
-      }, 300);
-    }
-
-    burger.addEventListener("click", openMenu);
-    closeBtn.addEventListener("click", closeMenu);
-
-    document.querySelectorAll("#mobileMenu a").forEach(link => {
-      link.addEventListener("click", closeMenu);
-    });
-  </script>
 </header>
 
+<!-- Мобільне меню -->
+<div id="mobileMenu" class="fixed inset-0 bg-black bg-opacity-90 text-white hidden flex-col items-center justify-center space-y-6 text-xl font-semibold z-50 animate-fade-in">
+  <!-- Хрестик -->
+  <button onclick="toggleMenu()" class="absolute top-4 right-6 text-white text-3xl">&times;</button>
+
+  <a href="#about" onclick="toggleMenu()">Про нас</a>
+  <a href="#sales" onclick="toggleMenu()">Акції</a>
+  <a href="#services" onclick="toggleMenu()">Послуги та ціни</a>
+  <a href="#examples" onclick="toggleMenu()">Приклади робіт</a>
+  <a href="#blog" onclick="toggleMenu()">Блог</a>
+  <a href="#reviews" onclick="toggleMenu()">Відгуки</a>
+  <a href="#contacts" onclick="toggleMenu()">Контакти</a>
+
+  <div class="flex space-x-4 text-sm pt-4">
+    <span class="text-green-400">UA</span>
+    <span class="text-gray-300">RU</span>
+    <span class="font-semibold">(000) 000-00-00</span>
+  </div>
+</div>
+
+<!-- Скрипт -->
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+    menu.classList.toggle("hidden");
+  }
+</script>
+
+<!-- Анімація -->
+<style>
+  @keyframes fade-in {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  .animate-fade-in {
+    animation: fade-in 0.25s ease-out;
+  }
+</style>
 
 
 
