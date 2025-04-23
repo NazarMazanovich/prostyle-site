@@ -267,63 +267,75 @@
 
   <div class="relative w-full px-6">
     <!-- Стрілка вліво -->
-    <button onclick="scrollGallery(-1)" class="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-white bg-opacity-80 rounded-full p-4 hover:scale-110 transition">
+    <button onclick="scrollWorkGallery(-1)" class="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-white bg-opacity-80 rounded-full p-4 hover:scale-110 transition">
       &#10094;
     </button>
 
     <!-- Фото-стрічка -->
-<div id="workGallery" class="flex overflow-x-auto scroll-smooth gap-6 px-16 pb-4 scrollbar-hide">
-  <img src="example1.jpg" alt="Example 1" class="w-96 h-[400px] object-cover rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer" onclick="openWorkLightbox(this.src)" />
-  <img src="example2.jpg" alt="Example 2" class="w-96 h-[400px] object-cover rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer" onclick="openWorkLightbox(this.src)" />
-  <img src="example3.jpg" alt="Example 3" class="w-96 h-[400px] object-cover rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer" onclick="openWorkLightbox(this.src)" />
-  <img src="example4.jpg" alt="Example 4" class="w-96 h-[400px] object-cover rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer" onclick="openWorkLightbox(this.src)" />
-  <img src="example5.jpg" alt="Example 5" class="w-96 h-[400px] object-cover rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer" onclick="openWorkLightbox(this.src)" />
-  <img src="example6.jpg" alt="Example 6" class="w-96 h-[400px] object-cover rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer" onclick="openWorkLightbox(this.src)" />
-  <img src="example7.jpg" alt="Example 7" class="w-96 h-[400px] object-cover rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer" onclick="openWorkLightbox(this.src)" />
-  <img src="example8.jpg" alt="Example 8" class="w-96 h-[400px] object-cover rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer" onclick="openWorkLightbox(this.src)" />
-  <img src="example9.jpg" alt="Example 9" class="w-96 h-[400px] object-cover rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer" onclick="openWorkLightbox(this.src)" />
+    <div id="workGallery" class="flex overflow-x-auto scroll-smooth gap-6 px-16 pb-4 scrollbar-hide">
+      <img src="example1.jpg" alt="Example 1" class="w-96 h-[400px] object-cover rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer" onclick="openWorkLightbox(this)" />
+      <img src="example2.jpg" alt="Example 2" class="w-96 h-[400px] object-cover rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer" onclick="openWorkLightbox(this)" />
+      <img src="example3.jpg" alt="Example 3" class="w-96 h-[400px] object-cover rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer" onclick="openWorkLightbox(this)" />
+      <img src="example4.jpg" alt="Example 4" class="w-96 h-[400px] object-cover rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer" onclick="openWorkLightbox(this)" />
+      <img src="example5.jpg" alt="Example 5" class="w-96 h-[400px] object-cover rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer" onclick="openWorkLightbox(this)" />
+      <img src="example6.jpg" alt="Example 6" class="w-96 h-[400px] object-cover rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer" onclick="openWorkLightbox(this)" />
+      <img src="example7.jpg" alt="Example 7" class="w-96 h-[400px] object-cover rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer" onclick="openWorkLightbox(this)" />
+      <img src="example8.jpg" alt="Example 8" class="w-96 h-[400px] object-cover rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer" onclick="openWorkLightbox(this)" />
+      <img src="example9.jpg" alt="Example 9" class="w-96 h-[400px] object-cover rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer" onclick="openWorkLightbox(this)" />
+    </div>
+
+    <!-- Стрілка вправо -->
+    <button onclick="scrollWorkGallery(1)" class="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-white bg-opacity-80 rounded-full p-4 hover:scale-110 transition">
+      &#10095;
+    </button>
+  </div>
+</section>
+
+<!-- Повноекранне зображення -->
+<div id="workLightbox" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 hidden">
+  <button onclick="closeWorkLightbox()" class="absolute top-5 right-5 text-white text-3xl">&times;</button>
+  <button onclick="navigateWorkLightbox(-1)" class="absolute left-5 text-white text-4xl hover:scale-110 transition">&#10094;</button>
+  <img id="workLightboxImage" src="" class="max-w-[90%] max-h-[90%] object-contain rounded shadow-xl" />
+  <button onclick="navigateWorkLightbox(1)" class="absolute right-5 text-white text-4xl hover:scale-110 transition">&#10095;</button>
 </div>
 
-<!-- Стрілка вправо -->
-<button onclick="scrollWorkGallery(1)" class="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-white bg-opacity-80 rounded-full p-4 hover:scale-110 transition">
-  &#10095;
-</button>
-
-
-<!-- Модальне вікно -->
-<div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 hidden">
-  <button onclick="closeLightbox()" class="absolute top-5 right-5 text-white text-4xl font-bold">&times;</button>
-  <button onclick="navigateLightbox(-1)" class="absolute left-5 text-white text-4xl font-bold">&#10094;</button>
-  <img id="lightboxImage" src="" class="max-w-4xl max-h-[90vh] object-contain" />
-  <button onclick="navigateLightbox(1)" class="absolute right-5 text-white text-4xl font-bold">&#10095;</button>
-</div>
-
+<!-- СКРИПТ -->
 <script>
-  const galleryImages = Array.from(document.querySelectorAll('#gallery img'));
-  let currentIndex = 0;
+  const workGalleryImages = Array.from(document.querySelectorAll('#workGallery img'));
+  let workCurrentIndex = 0;
 
-  function scrollGallery(direction) {
-    document.getElementById('gallery').scrollBy({
-      left: direction * 400,
-      behavior: 'smooth'
-    });
+  function scrollWorkGallery(direction) {
+    const gallery = document.getElementById('workGallery');
+    gallery.scrollBy({ left: direction * 400, behavior: 'smooth' });
   }
 
-  function openLightbox(img) {
-    currentIndex = galleryImages.indexOf(img);
-    document.getElementById('lightboxImage').src = img.src;
-    document.getElementById('lightbox').classList.remove('hidden');
+  function openWorkLightbox(img) {
+    workCurrentIndex = workGalleryImages.indexOf(img);
+    document.getElementById('workLightboxImage').src = img.src;
+    document.getElementById('workLightbox').classList.remove('hidden');
   }
 
-  function closeLightbox() {
-    document.getElementById('lightbox').classList.add('hidden');
+  function closeWorkLightbox() {
+    document.getElementById('workLightbox').classList.add('hidden');
   }
 
-  function navigateLightbox(step) {
-    currentIndex = (currentIndex + step + galleryImages.length) % galleryImages.length;
-    document.getElementById('lightboxImage').src = galleryImages[currentIndex].src;
+  function navigateWorkLightbox(step) {
+    workCurrentIndex = (workCurrentIndex + step + workGalleryImages.length) % workGalleryImages.length;
+    document.getElementById('workLightboxImage').src = workGalleryImages[workCurrentIndex].src;
   }
 </script>
+
+<!-- СТИЛІ -->
+<style>
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
 
 
 
