@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 100 100">
+  <!-- Корпус портфеля -->
+  <rect x="30" y="35" width="40" height="30" rx="4" ry="4" fill="#e0e0e0" stroke="#000" stroke-width="2"/>
+
+  <!-- Кришка -->
+  <path d="M30 35 H70 V43 H30 Z" fill="#FFA500"/>
+
+  <!-- Ручка -->
+  <path d="M42 30 V25 H58 V30" fill="none" stroke="#000" stroke-width="3"/>
+</svg>
