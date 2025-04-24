@@ -48,36 +48,34 @@
   </div>
 
   <!-- Мобільне меню -->
-  <div id="mobileMenu" class="fixed inset-0 bg-black bg-opacity-95 z-40 hidden">
-    <div class="flex flex-col items-center justify-center h-full text-white text-2xl uppercase space-y-6">
-      <!-- Хрестик -->
-      <button id="closeMenu" class="absolute top-6 left-6 text-white text-3xl">
-        &times;
-      </button>
+<div id="mobileMenu" class="fixed inset-0 bg-black bg-opacity-95 z-40 hidden flex flex-col items-center justify-center text-white text-2xl space-y-6 transition-all duration-300">
+  <!-- Хрестик -->
+  <button id="closeMenu" class="absolute top-6 left-6 text-white text-3xl">
+    &times;
+  </button>
 
-      <a href="#about" onclick="closeMobileMenu()" class="hover:text-yellow-400">Про нас</a>
-      <a href="#sales" onclick="closeMobileMenu()" class="hover:text-yellow-400">Акції</a>
-      <a href="#services" onclick="closeMobileMenu()" class="hover:text-yellow-400">Послуги та ціни</a>
-      <a href="#examples" onclick="closeMobileMenu()" class="hover:text-yellow-400">Приклади робіт</a>
-      <a href="#blog" onclick="closeMobileMenu()" class="hover:text-yellow-400">Блог</a>
-      <a href="#reviews" onclick="closeMobileMenu()" class="hover:text-yellow-400">Відгуки</a>
-      <a href="#contacts" onclick="closeMobileMenu()" class="hover:text-yellow-400">Контакти</a>
+  <!-- Пункти меню -->
+  <a href="#about" class="hover:text-yellow-400" onclick="closeMobileMenu()">Про нас</a>
+  <a href="#sales" class="hover:text-yellow-400" onclick="closeMobileMenu()">Акції</a>
+  <a href="#services" class="hover:text-yellow-400" onclick="closeMobileMenu()">Послуги та ціни</a>
+  <a href="#examples" class="hover:text-yellow-400" onclick="closeMobileMenu()">Приклади робіт</a>
+  <a href="#blog" class="hover:text-yellow-400" onclick="closeMobileMenu()">Блог</a>
+  <a href="#reviews" class="hover:text-yellow-400" onclick="closeMobileMenu()">Відгуки</a>
+  <a href="#contacts" class="hover:text-yellow-400" onclick="closeMobileMenu()">Контакти</a>
 
-      <div class="flex space-x-4 text-base mt-6">
-        <span class="text-green-400">UA</span>
-        <span class="text-gray-300">RU</span>
-        <span class="font-semibold">(067) 134-12-44</span>
-      </div>
-    </div>
+  <!-- Контакти -->
+  <div class="flex space-x-4 text-base mt-8">
+    <span class="text-green-400">UA</span>
+    <span class="text-gray-300">RU</span>
+    <span class="font-semibold">(067) 134-12-44</span>
   </div>
-</header>
+</div>
 
-<!-- Скрипт -->
+
 <script>
   const burgerBtn = document.getElementById('burgerBtn');
   const mobileMenu = document.getElementById('mobileMenu');
   const closeBtn = document.getElementById('closeMenu');
-  const header = document.getElementById('mainHeader');
 
   burgerBtn.addEventListener('click', () => {
     mobileMenu.classList.remove('hidden');
@@ -86,6 +84,10 @@
   function closeMobileMenu() {
     mobileMenu.classList.add('hidden');
   }
+
+  closeBtn.addEventListener('click', closeMobileMenu);
+</script>
+
 
   closeBtn.addEventListener('click', closeMobileMenu);
 
