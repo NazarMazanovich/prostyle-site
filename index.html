@@ -17,14 +17,14 @@
   <div class="flex items-center justify-between px-6 md:px-10">
     <!-- Логотип -->
     <a href="index.html" class="text-white text-xl md:text-2xl font-bold leading-tight">
-      <div id="logoText" class="text-center md:text-left transition-all duration-300">
+      <div class="text-center md:text-left">
         <span class="block">ProStyle</span>
         <span class="block text-sm md:text-base text-gray-400" style="font-family: 'Segoe UI', sans-serif;">професіоналізм і стиль</span>
       </div>
     </a>
 
-    <!-- Бургер-кнопка (мобільна) -->
-    <button id="menu-toggle" class="md:hidden text-white text-3xl focus:outline-none z-50">
+    <!-- Бургер-кнопка -->
+    <button id="burgerBtn" class="md:hidden text-white text-3xl focus:outline-none z-50">
       &#9776;
     </button>
 
@@ -39,70 +39,67 @@
       <a href="#contacts" class="hover:text-yellow-400">Контакти</a>
     </nav>
 
-    <!-- Контактна інформація (десктоп) -->
+    <!-- Контакти (десктоп) -->
     <div class="hidden md:flex items-center space-x-4 text-sm text-white">
       <span class="text-green-400">UA</span>
       <span class="text-gray-300">RU</span>
-      <span class="font-semibold">(067) 134-12-44</span>
+      <span class="font-semibold">(000) 000-00-00</span>
     </div>
   </div>
 
   <!-- Мобільне меню -->
-  <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-95 z-40 hidden flex-col items-center justify-center text-white text-2xl space-y-6 transition-all duration-300">
+  <div id="mobileMenu" class="fixed inset-0 bg-black bg-opacity-95 z-40 hidden flex-col items-center justify-center text-white text-2xl uppercase space-y-6 transition-all duration-300">
     <!-- Хрестик -->
-    <button id="menu-close" class="absolute top-6 left-6 text-white text-3xl">
+    <button id="closeMenu" class="absolute top-6 left-6 text-white text-3xl">
       &times;
     </button>
 
     <!-- Пункти меню -->
-    <a href="#about" class="hover:text-yellow-400" onclick="closeMenu()">Про нас</a>
-    <a href="#sales" class="hover:text-yellow-400" onclick="closeMenu()">Акції</a>
-    <a href="#services" class="hover:text-yellow-400" onclick="closeMenu()">Послуги та ціни</a>
-    <a href="#examples" class="hover:text-yellow-400" onclick="closeMenu()">Приклади робіт</a>
-    <a href="#blog" class="hover:text-yellow-400" onclick="closeMenu()">Блог</a>
-    <a href="#reviews" class="hover:text-yellow-400" onclick="closeMenu()">Відгуки</a>
-    <a href="#contacts" class="hover:text-yellow-400" onclick="closeMenu()">Контакти</a>
+    <a href="#about" class="hover:text-yellow-400" onclick="closeMobileMenu()">Про нас</a>
+    <a href="#sales" class="hover:text-yellow-400" onclick="closeMobileMenu()">Акції</a>
+    <a href="#services" class="hover:text-yellow-400" onclick="closeMobileMenu()">Послуги та ціни</a>
+    <a href="#examples" class="hover:text-yellow-400" onclick="closeMobileMenu()">Приклади робіт</a>
+    <a href="#blog" class="hover:text-yellow-400" onclick="closeMobileMenu()">Блог</a>
+    <a href="#reviews" class="hover:text-yellow-400" onclick="closeMobileMenu()">Відгуки</a>
+    <a href="#contacts" class="hover:text-yellow-400" onclick="closeMobileMenu()">Контакти</a>
 
-    <!-- Контактна інформація -->
-    <div class="flex space-x-4 text-base mt-8">
+    <div class="flex space-x-4 text-base mt-6">
       <span class="text-green-400">UA</span>
       <span class="text-gray-300">RU</span>
-      <span class="font-semibold">(067) 134-12-44</span>
+      <span class="font-semibold">(000) 000-00-00</span>
     </div>
   </div>
 </header>
 
 <!-- Скрипт -->
 <script>
-  const toggle = document.getElementById("menu-toggle");
-  const menu = document.getElementById("mobile-menu");
-  const closeBtn = document.getElementById("menu-close");
-  const header = document.getElementById("mainHeader");
-  const logoText = document.getElementById("logoText");
+  const burgerBtn = document.getElementById('burgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const closeBtn = document.getElementById('closeMenu');
+  const header = document.getElementById('mainHeader');
 
-  toggle.addEventListener("click", () => {
-    menu.classList.remove("hidden");
+  burgerBtn.addEventListener('click', () => {
+    mobileMenu.classList.remove('hidden');
   });
 
-  function closeMenu() {
-    menu.classList.add("hidden");
+  function closeMobileMenu() {
+    mobileMenu.classList.add('hidden');
   }
 
-  closeBtn.addEventListener("click", closeMenu);
+  closeBtn.addEventListener('click', closeMobileMenu);
 
-  // Зменшення хедера при скролі
-  window.addEventListener("scroll", () => {
+  // Ефект зменшення хедера при скролі
+  window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
-      header.classList.add("py-2");
-      header.classList.remove("py-4");
-      logoText.classList.add("scale-90");
+      header.classList.add('py-2');
+      header.classList.remove('py-4');
     } else {
-      header.classList.remove("py-2");
-      header.classList.add("py-4");
-      logoText.classList.remove("scale-90");
+      header.classList.remove('py-2');
+      header.classList.add('py-4');
     }
   });
 </script>
+
 
 
 
