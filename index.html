@@ -156,35 +156,37 @@
 
 
   <!-- Sales Section -->
+<section id="promo" class="relative h-[70vh] flex items-center justify-center text-center bg-cover bg-center" style="background-image: url('actions.png');">
+  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
 
-<section id="promo" class="bg-black text-white py-12 px-6 md:px-12 text-center">
-  <h2 class="text-3xl md:text-4xl font-bold mb-4">
-    <span class="text-yellow-400">🔥 АКЦІЯ!</span> Від 180 грн/м² + підключення люстри в подарунок
-  </h2>
-  <p class="text-lg md:text-xl font-medium mb-6 text-gray-300">
-    Залиш заявку прямо зараз — дія пропозиції обмежена:
-  </p>
+  <div class="relative z-10 text-white max-w-2xl px-6">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">
+      <span class="text-yellow-400">🔥 АКЦІЯ!</span> Від 180 грн/м² + підключення люстри в подарунок
+    </h2>
+    <p class="text-lg md:text-xl font-medium mb-6 text-gray-300">
+      Залиш заявку прямо зараз — пропозиція обмежена:
+    </p>
 
-  <!-- Таймер -->
-  <div id="countdown" class="flex justify-center space-x-6 text-3xl font-bold mb-8">
-    <div><span id="days">00</span><div class="text-sm font-medium text-gray-400">днів</div></div>
-    <div><span id="hours">00</span><div class="text-sm font-medium text-gray-400">год</div></div>
-    <div><span id="minutes">00</span><div class="text-sm font-medium text-gray-400">хв</div></div>
-    <div><span id="seconds">00</span><div class="text-sm font-medium text-gray-400">сек</div></div>
+    <!-- Таймер -->
+    <div id="countdown" class="flex justify-center space-x-6 text-2xl font-bold mb-8">
+      <div><span id="days">00</span><div class="text-sm font-medium text-gray-300">днів</div></div>
+      <div><span id="hours">00</span><div class="text-sm font-medium text-gray-300">год</div></div>
+      <div><span id="minutes">00</span><div class="text-sm font-medium text-gray-300">хв</div></div>
+      <div><span id="seconds">00</span><div class="text-sm font-medium text-gray-300">сек</div></div>
+    </div>
+
+    <!-- Форма -->
+    <form class="space-y-4 max-w-md mx-auto">
+      <input type="text" placeholder="Ваше ім’я" class="w-full p-3 rounded bg-black bg-opacity-70 border border-yellow-400 text-white placeholder-gray-400 focus:outline-none" required>
+      <input type="tel" placeholder="Телефон" class="w-full p-3 rounded bg-black bg-opacity-70 border border-yellow-400 text-white placeholder-gray-400 focus:outline-none" required>
+      <button type="submit" class="bg-yellow-400 text-black font-bold py-3 px-6 rounded hover:bg-yellow-300 transition">
+        Отримати знижку
+      </button>
+    </form>
   </div>
-
-
-  <!-- Форма -->
-  <form class="max-w-xl mx-auto space-y-4">
-    <input type="text" placeholder="Ваше ім’я" class="w-full p-3 rounded bg-black border border-yellow-400 text-white placeholder-gray-400 focus:outline-none" required>
-    <input type="tel" placeholder="Телефон" class="w-full p-3 rounded bg-black border border-yellow-400 text-white placeholder-gray-400 focus:outline-none" required>
-    <button type="submit" class="bg-yellow-400 text-black font-bold py-3 px-6 rounded shadow hover:bg-yellow-300 transition">
-      Отримати знижку
-    </button>
-  </form>
 </section>
 
-<!-- СКРИПТ для таймера -->
+<!-- Скрипт для таймера -->
 <script>
   const countdown = () => {
     const end = new Date();
@@ -209,6 +211,7 @@
 
   countdown();
 </script>
+
 
   <section id="sales" class="py-20 bg-gray-100 text-gray-800">
     <div class="max-w-6xl mx-auto px-6 text-center">
