@@ -184,55 +184,7 @@
 
 
   <!-- Sales Section -->
-<section id="promo" class="relative h-[70vh] flex items-center justify-center text-center bg-cover bg-center" style="background-image: url('actions.png');">
-  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
 
-  <div class="relative z-10 text-white max-w-2xl px-6">
-    <h2 class="text-3xl md:text-4xl font-bold mb-4">
-      <span class="text-yellow-400">🔥 АКЦІЯ!</span> Від 180 грн/м² + підключення люстри в подарунок
-    </h2>
-    <p class="text-lg md:text-xl font-medium mb-6 text-gray-300">
-      Залиш заявку прямо зараз — пропозиція обмежена:
-    </p>
-
-    <!-- Таймер -->
-    <section id="promo" class="relative bg-cover bg-center bg-no-repeat py-16" style="background-image: url('promo-bg.jpg');">
-  <div class="container mx-auto px-4 text-center text-white">
-
-    <h2 class="text-3xl md:text-5xl font-bold mb-8">
-      Акція! Натяжна стеля від 180 грн/м² + монтаж люстри у подарунок!
-    </h2>
-
-    <div class="flex flex-col md:flex-row justify-center items-center gap-8 mb-8">
-      
-      
-
-
-<!-- Скрипт для таймера -->
-<script>
-  const countdown = () => {
-    const end = new Date();
-    end.setDate(end.getDate() + 5);
-    end.setHours(0, 0, 0, 0);
-
-    const update = () => {
-      const now = new Date().getTime();
-      const distance = end.getTime() - now;
-
-      if (distance < 0) return;
-
-      document.getElementById("days").innerText = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
-      document.getElementById("hours").innerText = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
-      document.getElementById("minutes").innerText = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
-      document.getElementById("seconds").innerText = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
-    };
-
-    update();
-    setInterval(update, 1000);
-  };
-
-  countdown();
-</script>
 
 
   <section id="sales" class="py-20 bg-gray-100 text-gray-800">
