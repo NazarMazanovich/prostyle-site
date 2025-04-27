@@ -717,28 +717,29 @@
   </div>
 </section>
 
-<!-- Блок Акції без таймера -->
-<section id="special-offer" class="relative bg-cover bg-center bg-no-repeat py-16" style="background-image: url('actions 2.jpg');">
-  <!-- Напівпрозорий шар для затемнення -->
-  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+<!-- Блок Акції без таймера з адаптивним розмиттям -->
+<section id="special-offer" class="relative bg-cover bg-center bg-no-repeat py-20" style="background-image: url('actions 2.jpg');">
+  
+  <!-- Напівпрозоре розмиття -->
+  <div class="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm md:backdrop-blur-0"></div>
 
-  <div class="relative container mx-auto text-center px-4 flex flex-col items-center space-y-6 max-w-2xl z-10">
+  <div class="relative container mx-auto text-center px-4 flex flex-col items-center space-y-6 max-w-2xl z-10 opacity-0 transform translate-y-10 transition-all duration-1000 ease-in-out" id="offerContent">
     
     <!-- Заголовок -->
-    <h2 class="text-3xl md:text-5xl font-extrabold text-yellow-400 uppercase tracking-wide">
+    <h2 class="text-3xl md:text-5xl font-bold text-yellow-400 uppercase leading-tight">
       Оновіть свій простір із ProStyle
     </h2>
 
     <!-- Підзаголовок -->
-    <p class="text-lg md:text-2xl text-white font-light leading-relaxed">
+    <p class="text-base md:text-2xl text-white font-light leading-relaxed mt-4 px-2">
       Замовте стильну натяжну стелю зараз і отримайте індивідуальну консультацію та подарунок на вибір!
     </p>
 
     <!-- Форма -->
-    <form class="flex flex-col items-center space-y-4 mt-8 w-full px-6">
+    <form class="flex flex-col items-center space-y-4 mt-6 w-full max-w-md">
       <input type="text" placeholder="Ваше ім'я" class="w-full px-4 py-3 rounded text-black focus:outline-none" required>
       <input type="tel" placeholder="Ваш телефон" class="w-full px-4 py-3 rounded text-black focus:outline-none" required>
-      <button type="submit" class="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 rounded transition duration-300">
+      <button type="submit" class="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 rounded transition-transform duration-300 hover:scale-105 animate-pulse-slow">
         Залишити заявку
       </button>
     </form>
@@ -746,8 +747,37 @@
   </div>
 </section>
 
+<!-- Скрипт для анімації появи -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const offerContent = document.getElementById('offerContent');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          offerContent.classList.remove('opacity-0', 'translate-y-10');
+          offerContent.classList.add('opacity-100', 'translate-y-0');
+        }
+      });
+    }, { threshold: 0.3 });
 
+    observer.observe(offerContent);
+  });
+</script>
 
+<!-- Стилі для пульсації -->
+<style>
+@keyframes pulse-slow {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+.animate-pulse-slow {
+  animation: pulse-slow 2s infinite;
+}
+</style>
 
 
 <section id="contacts" class="py-20 bg-white text-gray-800">
