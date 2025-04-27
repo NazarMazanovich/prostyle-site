@@ -184,74 +184,81 @@
 
 
   <!-- Sales Section -->
+<!-- Блок Акції -->
+<section id="promo" class="relative bg-cover bg-center bg-no-repeat py-16" style="background-image: url('твій_шлях_до_файлу.jpg');">
+  <div class="container mx-auto text-center px-4 flex flex-col items-center space-y-6">
+    
+    <!-- Маленький заголовок -->
+    <div class="text-yellow-400 text-lg font-semibold flex items-center space-x-2">
+      <span>🔥</span><span>Акція</span>
+    </div>
 
-<!-- Блок Акція -->
-<section id="promo" class="relative bg-cover bg-center bg-no-repeat py-20" style="background-image: url('actions.png');">
-  <div class="container mx-auto px-6 flex flex-col items-center text-center text-white">
-
-    <!-- Текст акції -->
-    <h2 class="text-4xl md:text-5xl font-bold mb-8 leading-tight">
-      Натяжна стеля від 180 грн/м² <br> + монтаж люстри в подарунок!
+    <!-- Основний заголовок -->
+    <h2 class="text-2xl md:text-4xl font-bold text-white leading-tight">
+      Натяжна стеля від 180 грн/м² <br class="md:hidden" /> + монтаж люстри в подарунок!
     </h2>
 
-    <!-- Таймер + форма -->
-    <div class="flex flex-row gap-12 justify-center items-center">
-
-      <!-- Таймер -->
-      <div id="timer" class="flex gap-6 text-3xl font-bold">
-        <div class="flex flex-col items-center">
-          <span id="days">05</span>
-          <span class="text-sm font-normal mt-2">Днів</span>
-        </div>
-        <div class="flex flex-col items-center">
-          <span id="hours">12</span>
-          <span class="text-sm font-normal mt-2">Годин</span>
-        </div>
-        <div class="flex flex-col items-center">
-          <span id="minutes">30</span>
-          <span class="text-sm font-normal mt-2">Хвилин</span>
-        </div>
-        <div class="flex flex-col items-center">
-          <span id="seconds">45</span>
-          <span class="text-sm font-normal mt-2">Секунд</span>
-        </div>
+    <!-- Таймер -->
+    <div class="flex space-x-4 text-white text-center mt-6" id="countdown">
+      <div>
+        <div class="text-3xl font-bold" id="days">00</div>
+        <div class="text-sm">Днів</div>
       </div>
-
-      <!-- Форма заявки -->
-      <form class="flex flex-row gap-4 items-center">
-        <input type="text" placeholder="Ваше ім'я" class="p-3 rounded text-black w-48" required>
-        <input type="tel" placeholder="Ваш телефон" class="p-3 rounded text-black w-48" required>
-        <button type="submit" class="bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 px-6 rounded">
-          Отримати пропозицію
-        </button>
-      </form>
-
+      <div>
+        <div class="text-3xl font-bold" id="hours">00</div>
+        <div class="text-sm">Годин</div>
+      </div>
+      <div>
+        <div class="text-3xl font-bold" id="minutes">00</div>
+        <div class="text-sm">Хвилин</div>
+      </div>
+      <div>
+        <div class="text-3xl font-bold" id="seconds">00</div>
+        <div class="text-sm">Секунд</div>
+      </div>
     </div>
+
+    <!-- Форма -->
+    <form class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4 mt-6">
+      <input type="text" placeholder="Ваше ім'я" class="px-4 py-2 rounded text-black focus:outline-none" required>
+      <input type="tel" placeholder="Ваш телефон" class="px-4 py-2 rounded text-black focus:outline-none" required>
+      <button type="submit" class="bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-2 px-6 rounded transition duration-300">
+        Отримати пропозицію
+      </button>
+    </form>
 
   </div>
 </section>
 
 <!-- Скрипт таймера -->
 <script>
-  const endDate = new Date();
-  endDate.setDate(endDate.getDate() + 5);
+  const countdown = () => {
+    const countDate = new Date().getTime() + 5 * 24 * 60 * 60 * 1000; // 5 днів від зараз
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const gap = countDate - now;
 
-  function updateTimer() {
-    const now = new Date().getTime();
-    const distance = endDate - now;
+      const second = 1000;
+      const minute = second * 60;
+      const hour = minute * 60;
+      const day = hour * 24;
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      const days = Math.floor(gap / day);
+      const hours = Math.floor((gap % day) / hour);
+      const minutes = Math.floor((gap % hour) / minute);
+      const seconds = Math.floor((gap % minute) / second);
 
-    document.getElementById("days").innerText = String(days).padStart(2, '0');
-    document.getElementById("hours").innerText = String(hours).padStart(2, '0');
-    document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
-    document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
-  }
+      document.getElementById('days').innerText = days.toString().padStart(2, '0');
+      document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+      document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+      document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
 
-  setInterval(updateTimer, 1000);
+      if (gap < 0) {
+        clearInterval(interval);
+      }
+    }, 1000);
+  };
+  countdown();
 </script>
 
 
