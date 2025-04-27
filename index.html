@@ -185,20 +185,21 @@
 
   <!-- Sales Section -->
 <!-- Блок Акції -->
-<section id="promo" class="relative bg-cover bg-center bg-no-repeat py-16" style="background-image: url('actions.png');">
+<section id="promo" class="relative bg-cover bg-center bg-no-repeat py-16" style="background-image: url('твій_шлях_до_файлу.jpg');">
   <div class="container mx-auto text-center px-4 flex flex-col items-center space-y-6 max-w-2xl">
-    
-    <!-- Великий напис АКЦІЯ -->
-    <div class="text-yellow-400 text-4xl md:text-5xl font-extrabold uppercase tracking-wide">
-      Акція
+
+    <!-- Вогник + Акція -->
+    <div class="flex items-center space-x-3 text-yellow-400 text-4xl md:text-5xl font-extrabold uppercase tracking-wide">
+      <span>🔥</span>
+      <span>Акція</span>
     </div>
 
     <!-- Основний текст -->
     <h2 class="text-3xl md:text-4xl font-bold text-white leading-tight">
-      Натяжна стеля від 180 грн/м²
+      Натяжна стеля від 180 грн +
     </h2>
 
-    <h3 class="text-2xl md:text-3xl text-white font-semibold">
+    <h3 class="text-2xl md:text-3xl text-white font-semibold mt-2">
       Монтаж люстри безкоштовно
     </h3>
 
@@ -237,7 +238,7 @@
 <!-- Скрипт таймера -->
 <script>
   const countdown = () => {
-    const countDate = new Date().getTime() + 5 * 24 * 60 * 60 * 1000; // 5 днів від зараз
+    const countDate = new Date().getTime() + 5 * 24 * 60 * 60 * 1000; // 5 днів
     const interval = setInterval(() => {
       const now = new Date().getTime();
       const gap = countDate - now;
@@ -264,6 +265,7 @@
   };
   countdown();
 </script>
+
 
 
   <section id="sales" class="py-20 bg-gray-100 text-gray-800">
