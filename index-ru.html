@@ -1,0 +1,831 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ProStyle — Натяжные потолки в Киеве</title>
+  <link rel="icon" type="image/png" href="favicon .png?v=1">
+
+<!-- SEO -->
+<meta name="description" content="ProStyle — ProStyle – натяжные потолки в Киеве и области. Световые линии, натяжные потолки премиум класса. Бесплатная консультация и замер!">
+<meta name="keywords" content="натяжные потолки Киев, световые линии, натяжной потолок, монтаж потолков, натяжные потолки цена, потолки Киев, ProStyle">
+<meta name="author" content="ProStyle">
+<meta name="robots" content="index, follow">
+<meta name="language" content="uk">
+
+<!-- OpenGraph для соцмереж -->
+<meta property="og:title" content="ProStyle — Натяжные потолки в Киеве и области">
+<meta property="og:description" content="Световые линии, премиум потолок, бесплатная консультация. Заказывайте натяжные потолки от профессионалов!">
+<meta property="og:image" content="https://prostyle.kyiv.ua/banner_optimized.jpg">
+<meta property="og:url" content="https://prostyle.kyiv.ua/">
+<meta property="og:type" content="website">
+
+
+
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+    body { font-family: 'Arial', sans-serif; }
+  </style> 
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
+
+</head>
+
+<body class="m-0 p-0 text-white">
+
+<!-- Header -->
+<header id="mainHeader" class="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-40 transition-all duration-300 py-4">
+  <div class="flex items-center justify-between px-6 md:px-10 transition-all duration-300" id="headerInner">
+    <!-- Логотип -->
+    <a href="index.html" class="text-white text-xl md:text-2xl font-bold flex items-center space-x-2 z-30">
+  <div class="text-center md:text-left" id="logoText">
+    <span class="block">ProStyle</span>
+    <span class="block font-bold tracking-tight text-sm md:text-base text-gray-400" style="font-family: 'Segoe UI', sans-serif;">
+      профессионализм и стиль
+    </span>
+  </div>
+</a>
+
+    </a>
+
+    <!-- Бургер-кнопка -->
+    <button id="menu-toggle" class="text-white text-3xl z-30 md:hidden focus:outline-none">&#9776;</button>
+
+    <!-- Навігація (десктоп) -->
+    <nav class="hidden md:flex space-x-6 text-sm font-medium uppercase text-white">
+      <a href="#about" class="hover:text-yellow-400">О нас</a>
+      <a href="#promo" class="hover:text-yellow-400">Акции</a>
+      <a href="#services" class="hover:text-yellow-400">Услуги и цены</a>
+      <a href="#examples" class="hover:text-yellow-400">Примеры работ</a>
+      <a href="#blog" class="hover:text-yellow-400">Блог</a>
+      <a href="#reviews" class="hover:text-yellow-400">Отзывы</a>
+      <a href="#contacts" class="hover:text-yellow-400">Контакты</a>
+
+
+    </nav>
+
+    <!-- Контактна інформація (десктоп) -->
+    <div class="hidden md:flex items-center space-x-4 text-sm text-white">
+      <span class="text-green-400">UA</span>
+      <span class="text-gray-300">RU</span>
+      <span class="font-semibold">(068) 941-51-89</span>
+    </div>
+  </div>
+
+  <!-- Мобільне меню -->
+  <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-95 text-white text-xl flex flex-col items-center justify-center space-y-6 z-40 hidden transition-opacity duration-300">
+    <!-- Хрестик зліва -->
+    <button id="menu-close" class="absolute top-4 left-6 text-3xl hover:text-yellow-400">&times;</button>
+
+    <a href="#about" class="hover:text-yellow-400" onclick="closeMenu()">О нас</a>
+    <a href="#promo" class="hover:text-yellow-400" onclick="closeMenu()">Акции</a>
+    <a href="#services" class="hover:text-yellow-400" onclick="closeMenu()">Услуги и цены</a>
+    <a href="#examples" class="hover:text-yellow-400" onclick="closeMenu()">Примеры работ</a>
+    <a href="#blog" class="hover:text-yellow-400" onclick="closeMenu()">Блог</a>
+    <a href="#reviews" class="hover:text-yellow-400" onclick="closeMenu()">Отзывы</a>
+    <a href="#contacts" class="hover:text-yellow-400" onclick="closeMenu()">Контакты</a>
+
+    <div class="flex space-x-4 text-base mt-6">
+      <span class="text-green-400">UA</span>
+      <span class="text-gray-300">RU</span>
+      <span class="font-semibold">(000) 000-00-00</span>
+    </div>
+  </div>
+</header>
+
+<!-- Скрипт -->
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  const closeBtn = document.getElementById("menu-close");
+  const header = document.getElementById("mainHeader");
+  const logoText = document.getElementById("logoText");
+
+  toggle.addEventListener("click", () => {
+    menu.classList.remove("hidden");
+    setTimeout(() => menu.classList.add("opacity-100"), 10);
+  });
+
+  function closeMenu() {
+    menu.classList.remove("opacity-100");
+    setTimeout(() => menu.classList.add("hidden"), 300);
+  }
+
+  closeBtn.addEventListener("click", closeMenu);
+
+  // Зменшення хедера при скролі
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      header.classList.add("py-2");
+      header.classList.remove("py-4");
+      logoText.classList.add("text-base");
+      logoText.classList.remove("text-xl", "md:text-2xl");
+    } else {
+      header.classList.remove("py-2");
+      header.classList.add("py-4");
+      logoText.classList.remove("text-base");
+      logoText.classList.add("text-xl", "md:text-2xl");
+    }
+  });
+</script>
+
+
+
+
+
+  <!-- Hero Section -->
+  <section class="relative h-screen bg-cover bg-center text-white flex items-center justify-center" style="background-image: url('banner_optimized.jpg');">
+    <div class="absolute inset-0 bg-black opacity-40"></div>
+    <div class="relative z-10 text-center px-4">
+      <h1 class="text-5xl font-extrabold mb-6 drop-shadow-lg">ProStyle — Натяжные потолки в Киеве и области</h1>
+      <p class="text-xl mb-6 drop-shadow">Стильно. Качественно. С гарантией до 17 лет.</p>
+      <a href="#contact" class="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-full text-lg shadow-lg">
+        Бесплатный замер
+      </a>
+    </div>
+  </section>
+
+<!-- About Section -->
+<section id="about" class="bg-white text-gray-800 py-20">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold mb-12">О нас</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      
+      <!-- Стиль и качество -->
+      <div class="flex flex-col items-center">
+        <img src="prostyle_about_us_feather_final_centered.svg" alt="Стиль и качество" class="w-16 h-16 mb-4">
+        <h3 class="text-xl font-semibold mb-2">Стиль и качество</h3>
+        <p class="text-sm text-gray-600">ProStyle — это про атмосферу. Мы создаем натяжные потолки, подчеркивающие характер вашего пространства и придающие ему стиля и глубины.</p>
+      </div>
+
+      <!-- Профессионализм -->
+      <div class="flex flex-col items-center">
+        <img src="prostyle_professionalism_icon_briefcase_final_in_shield.svg" alt="Профессионализм" class="w-16 h-16 mb-4">
+        <h3 class="text-xl font-semibold mb-2">Профессионализм</h3>
+        <p class="text-sm text-gray-600">10+ лет опыта. Соблюдаем сроки, всегда оставляем чистоту и работаем на результат.</p>
+      </div>
+
+      <!-- Экологичность -->
+      <div class="flex flex-col items-center">
+        <img src="prostyle_ecology_icon_sprout_shield.svg" alt="Экологичность" class="w-16 h-16 mb-4">
+        <h3 class="text-xl font-semibold mb-2">Экологичность</h3>
+        <p class="text-sm text-gray-600">Используем только качественные безопасные материалы, подходящие для детей и аллергиков.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Sales Section -->
+<!-- Блок Акції -->
+<section id="promo" class="relative bg-cover bg-center bg-no-repeat py-16" style="background-image: url('actions.png');">
+  <!-- Темний напівпрозорий шар -->
+  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+  <div class="relative container mx-auto text-center px-4 flex flex-col items-center space-y-6 max-w-2xl z-10">
+    
+    <!-- Вогник + Акція -->
+    <div class="flex items-center space-x-3 text-yellow-400 text-3xl md:text-5xl font-extrabold uppercase tracking-wide">
+      <span>🔥</span>
+      <span>Акция</span>
+    </div>
+
+    <!-- Основний текст -->
+    <h2 class="text-2xl md:text-4xl font-bold text-white leading-tight mb-2">
+      Натяжной потолок от 180 грн/м² +
+    </h2>
+
+    <h3 class="text-xl md:text-3xl text-white font-semibold -mt-2">
+      монтаж люстры бесплатно
+    </h3>
+
+    <!-- Таймер -->
+    <div class="flex justify-center space-x-6 text-white text-center mt-4" id="countdown">
+      <div>
+        <div class="text-3xl md:text-4xl font-bold" id="days">00</div>
+        <div class="text-xs md:text-sm">Дней</div>
+      </div>
+      <div>
+        <div class="text-3xl md:text-4xl font-bold" id="hours">00</div>
+        <div class="text-xs md:text-sm">Часов</div>
+      </div>
+      <div>
+        <div class="text-3xl md:text-4xl font-bold" id="minutes">00</div>
+        <div class="text-xs md:text-sm">Минут</div>
+      </div>
+      <div>
+        <div class="text-3xl md:text-4xl font-bold" id="seconds">00</div>
+        <div class="text-xs md:text-sm">Секунд</div>
+      </div>
+    </div>
+
+    <!-- Форма -->
+    <form class="flex flex-col items-center space-y-4 mt-6 w-full px-6">
+      <input type="text" placeholder="Ваше имя" class="w-full px-4 py-3 rounded text-black focus:outline-none" required>
+      <input type="tel" placeholder="Ваш телефон" class="w-full px-4 py-3 rounded text-black focus:outline-none" required>
+      <button type="submit" class="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 rounded transition duration-300">
+        Получить предложение
+      </button>
+    </form>
+
+  </div>
+</section>
+
+<!-- Скрипт таймера -->
+<script>
+  const countdown = () => {
+    const countDate = new Date().getTime() + 5 * 24 * 60 * 60 * 1000; // 5 днів
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const gap = countDate - now;
+
+      const second = 1000;
+      const minute = second * 60;
+      const hour = minute * 60;
+      const day = hour * 24;
+
+      const days = Math.floor(gap / day);
+      const hours = Math.floor((gap % day) / hour);
+      const minutes = Math.floor((gap % hour) / minute);
+      const seconds = Math.floor((gap % minute) / second);
+
+      document.getElementById('days').innerText = days.toString().padStart(2, '0');
+      document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+      document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+      document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+
+      if (gap < 0) {
+        clearInterval(interval);
+      }
+    }, 1000);
+  };
+  countdown();
+</script>
+
+
+  <section id="sales" class="py-20 bg-gray-100 text-gray-800">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-10">Акции и спецпредложения</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white shadow-lg rounded-lg p-6">
+          <h3 class="text-xl font-semibold mb-2">-20% по первому заказу</h3>
+          <p class="text-sm text-gray-600 mb-4">К концу месяца. Только для новых клиентов!</p>
+          <a href="#contact" class="inline-block mt-2 bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-full text-sm">Получить скидку</a>
+        </div>
+        <div class="bg-white shadow-lg rounded-lg p-6">
+          <h3 class="text-xl font-semibold mb-2">Бесплатный монтаж</h3>
+          <p class="text-sm text-gray-600 mb-4">При заказе от 50 м² – экономия до 10000 грн!</p>
+          <a href="#contact" class="inline-block mt-2 bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-full text-sm">Заказать сейчас</a>
+        </div>
+        <div class="bg-white shadow-lg rounded-lg p-6">
+          <h3 class="text-xl font-semibold mb-2">Подарок к замеру</h3>
+          <p class="text-sm text-gray-600 mb-4">LED-подсветка – в подарок каждому, кто закажет замер!</p>
+          <a href="#contact" class="inline-block mt-2 bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-full text-sm">Записаться на замер</a>
+        </div>
+      </div>
+    </div>
+  </section> 
+
+</body>
+</html>
+
+
+  <!-- Representatives -->
+  <section id="services" class="bg-white text-gray-800 py-20">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-10">Официальные представители</h2>
+      <p class="text-lg font-medium mb-8">
+        
+      Официальный представитель торговых марок <strong>Teqtum</strong> (Германия), <strong>Panifel</strong> (Франция),
+      <strong>Kralton</strong> (ЕС), <strong>MSD Premium</strong> (Китай), <strong>Descor</strong> (Германия), <strong>Clipso</strong> (Франция)
+    </p>
+
+    <!-- Логотипи в центрі -->
+    <div class="flex flex-wrap justify-center items-center gap-10">
+      <img src="teqtum.png" alt="Teqtum" class="w-28 h-auto" />
+      <img src="panifel.png" alt="Panifel" class="w-28 h-auto" />
+      <img src="kralton.png" alt="Kralton" class="w-28 h-auto" />
+      <img src="msd.png" alt="MSD Premium" class="w-28 h-auto" />
+      <img src="descor.png" alt="Descor" class="w-28 h-auto" />
+      <img src="clipso.png" alt="Clipso" class="w-28 h-auto" />
+    </div>
+  </div>
+</section>
+
+<!-- Certificates Section -->
+<section id="certificates" class="bg-white text-gray-800 py-20 px-4">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-4">Сертификаты качества</h2>
+    <p class="text-lg mb-10">Мы работаем официально. Все материалы имеют сертификаты соответствия.</p>
+
+    <!-- Горизонтальна стрічка -->
+    <div class="overflow-x-auto whitespace-nowrap scroll-smooth scrollbar-hide">
+      <div class="inline-flex gap-6 px-4">
+        <img src="kralton-sert.png" alt="Сертифікат Kralton" class="cert-image w-52 h-auto cursor-pointer rounded shadow" />
+        <img src="msd premium-sert.png" alt="Сертифікат MSD Premium" class="cert-image w-52 h-auto cursor-pointer rounded shadow" />
+        <img src="panifel-sert.jpg" alt="Сертифікат Panifel" class="cert-image w-52 h-auto cursor-pointer rounded shadow" />
+        <img src="teqtumeuro-sert.png" alt="Сертифікат Teqtum" class="cert-image w-52 h-auto cursor-pointer rounded shadow" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 hidden">
+    <button id="closeBtn" class="absolute top-5 right-5 text-white text-3xl font-bold">&times;</button>
+    <button id="prevBtn" class="absolute left-5 text-white text-4xl font-bold">&lsaquo;</button>
+    <img id="modal-img" class="max-h-[90vh] max-w-[90vw] object-contain transition duration-300" />
+    <button id="nextBtn" class="absolute right-5 text-white text-4xl font-bold">&rsaquo;</button>
+  </div>
+</section>
+
+<!-- JS -->
+<script>
+  const images = document.querySelectorAll('.cert-image');
+  const modal = document.getElementById('modal');
+  const modalImg = document.getElementById('modal-img');
+  const closeBtn = document.getElementById('closeBtn');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  let currentIndex = 0;
+
+  function showImage(index) {
+    modalImg.src = images[index].src;
+    currentIndex = index;
+    modal.classList.remove('hidden');
+  }
+
+  images.forEach((img, i) => {
+    img.addEventListener('click', () => showImage(i));
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.classList.add('hidden');
+  });
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    modalImg.src = images[currentIndex].src;
+  });
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    modalImg.src = images[currentIndex].src;
+  });
+
+  modalImg.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+  modalImg.addEventListener('touchend', e => {
+    let endX = e.changedTouches[0].clientX;
+    if (startX - endX > 50) nextBtn.click();
+    else if (endX - startX > 50) prevBtn.click();
+  });
+</script>
+
+<!-- Scrollbar hide (Tailwind plugin) -->
+<style>
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
+
+
+<!-- Services and Prices -->
+<section id="prices" class="bg-white text-gray-800 py-16 px-4">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-8">Виды потолков и цены</h2>
+    <p class="text-lg mb-12">Ознакомьтесь с основными видами натяжных потолков, которые мы устанавливаем под ключ:</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Матовая, Глянцева, Сатинова -->
+      <div class="bg-gray-100 rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-semibold mb-2">Матовая, Глянцева, Сатинова</h3>
+        <p class="text-sm text-gray-600 mb-4">Классические потолки для любого интерьера – с разной текстурой покрытия.</p>
+        <p class="text-yellow-600 font-bold text-lg">от 290 грн/м²</p>
+      </div>
+
+      <!-- Паряща -->
+      <div class="bg-gray-100 rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-semibold mb-2">Парящий потолок</h3>
+        <p class="text-sm text-gray-600 mb-4">С подсветкой по периметру для впечатляющего эффекта.</p>
+        <p class="text-yellow-600 font-bold text-lg">от 480 грн/м²</p>
+      </div>
+
+      <!-- Световые линии -->
+      <div class="bg-gray-100 rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-semibold mb-2">Световые линии</h3>
+        <p class="text-sm text-gray-600 mb-4">Современный стиль с встроенным LED-светом.</p>
+        <p class="text-yellow-600 font-bold text-lg">от 520 грн/м²</p>
+      </div>
+
+      <!-- Магнитный трек -->
+      <div class="bg-gray-100 rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-semibold mb-2">Магнитный трек</h3>
+        <p class="text-sm text-gray-600 mb-4">Универсальная система освещения с мобильными светильниками.</p>
+        <p class="text-yellow-600 font-bold text-lg">от 590 грн/м²</p>
+      </div>
+
+      <!-- Звездное небо -->
+      <div class="bg-gray-100 rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-semibold mb-2">Звездное небо</h3>
+        <p class="text-sm text-gray-600 mb-4">Фантастический эффект, создающий атмосферу космоса.</p>
+        <p class="text-yellow-600 font-bold text-lg">от 900 грн/м²</p>
+      </div>
+
+      <!-- Фотодрук -->
+      <div class="bg-gray-100 rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-semibold mb-2">Фотопечать на потолке</h3>
+        <p class="text-sm text-gray-600 mb-4">Любое изображение или узор по вашему выбору.</p>
+        <p class="text-yellow-600 font-bold text-lg">от 550 грн/м²</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Примеры работ -->
+<section id="examples" class="bg-gray-100 text-gray-800 py-24 px-0 w-full">
+  <div class="text-center mb-12">
+    <h2 class="text-4xl font-bold">Примеры работ</h2>
+  </div>
+
+  <div class="relative w-full px-6">
+    <!-- Стрілка вліво -->
+    <button onclick="scrollWorkGallery(-1)" class="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-white bg-opacity-80 rounded-full p-4 hover:scale-110 transition">
+      &#10094;
+    </button>
+
+    <!-- Фото-стрічка -->
+    <div id="workGallery" class="flex overflow-x-auto scroll-smooth gap-6 px-16 pb-4 scrollbar-hide">
+      <img src="example1.jpg" alt="Example 1" class="w-96 h-[400px] object-cover rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer" onclick="openWorkLightbox(this)" />
+      <img src="example2.jpg" alt="Example 2" class="w-96 h-[400px] object-cover rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer" onclick="openWorkLightbox(this)" />
+      <img src="example3.jpg" alt="Example 3" class="w-96 h-[400px] object-cover rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer" onclick="openWorkLightbox(this)" />
+      <img src="example4.jpg" alt="Example 4" class="w-96 h-[400px] object-cover rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer" onclick="openWorkLightbox(this)" />
+      <img src="example5.jpg" alt="Example 5" class="w-96 h-[400px] object-cover rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer" onclick="openWorkLightbox(this)" />
+      <img src="example6.jpg" alt="Example 6" class="w-96 h-[400px] object-cover rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer" onclick="openWorkLightbox(this)" />
+      <img src="example7.jpg" alt="Example 7" class="w-96 h-[400px] object-cover rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer" onclick="openWorkLightbox(this)" />
+      <img src="example8.jpg" alt="Example 8" class="w-96 h-[400px] object-cover rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer" onclick="openWorkLightbox(this)" />
+      <img src="example9.jpg" alt="Example 9" class="w-96 h-[400px] object-cover rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer" onclick="openWorkLightbox(this)" />
+    </div>
+
+    <!-- Стрілка вправо -->
+    <button onclick="scrollWorkGallery(1)" class="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-white bg-opacity-80 rounded-full p-4 hover:scale-110 transition">
+      &#10095;
+    </button>
+  </div>
+</section>
+
+<!-- Повноекранне зображення -->
+<div id="workLightbox" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 hidden">
+  <button onclick="closeWorkLightbox()" class="absolute top-5 right-5 text-white text-3xl">&times;</button>
+  <button onclick="navigateWorkLightbox(-1)" class="absolute left-5 text-white text-4xl hover:scale-110 transition">&#10094;</button>
+  <img id="workLightboxImage" src="" class="max-w-[90%] max-h-[90%] object-contain rounded shadow-xl" />
+  <button onclick="navigateWorkLightbox(1)" class="absolute right-5 text-white text-4xl hover:scale-110 transition">&#10095;</button>
+</div>
+
+<!-- СКРИПТ -->
+<script>
+  const workGalleryImages = Array.from(document.querySelectorAll('#workGallery img'));
+  let workCurrentIndex = 0;
+
+  function scrollWorkGallery(direction) {
+    const gallery = document.getElementById('workGallery');
+    gallery.scrollBy({ left: direction * 400, behavior: 'smooth' });
+  }
+
+  function openWorkLightbox(img) {
+    workCurrentIndex = workGalleryImages.indexOf(img);
+    document.getElementById('workLightboxImage').src = img.src;
+    document.getElementById('workLightbox').classList.remove('hidden');
+  }
+
+  function closeWorkLightbox() {
+    document.getElementById('workLightbox').classList.add('hidden');
+  }
+
+  function navigateWorkLightbox(step) {
+    workCurrentIndex = (workCurrentIndex + step + workGalleryImages.length) % workGalleryImages.length;
+    document.getElementById('workLightboxImage').src = workGalleryImages[workCurrentIndex].src;
+  }
+</script>
+
+<!-- СТИЛІ -->
+<style>
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
+
+
+
+<!-- Reviews Section -->
+<section id="reviews" class="bg-white text-gray-800 py-20">
+  <div class="max-w-7xl mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold mb-12">Отзывы наших клиентов</h2>
+
+    <div class="relative">
+      <!-- Scrollable Row -->
+      <div id="reviewGallery" class="flex gap-6 overflow-x-auto scroll-smooth scrollbar-hide px-2">
+        <!-- Review 1 -->
+        <div class="min-w-[300px] bg-gray-100 rounded-lg shadow-md p-6 text-left animate-fadeIn">
+          <p class="italic mb-4">“"Работа сделана идеально. Монтаж за 1 день, качество – супер! Рекомендую!"</p>
+          <p class="font-semibold">Андрей, г. Киев</p>
+        </div>
+        <!-- Review 2 -->
+        <div class="min-w-[300px] bg-gray-100 rounded-lg shadow-md p-6 text-left animate-fadeIn">
+          <p class="italic mb-4">"Потолки с фотопечатью – это вау! Дети в восторге. Спасибо команде ProStyle."</p>
+          <p class="font-semibold">Елена, г. Ирпень</p>
+        </div>
+        <!-- Review 3 -->
+        <div class="min-w-[300px] bg-gray-100 rounded-lg shadow-md p-6 text-left animate-fadeIn">
+          <p class="italic mb-4">"Дизайн, скорость и цена - все на уровне. Буду советовать друзьям."</p>
+          <p class="font-semibold">Максим, г. Бровары</p>
+        </div>
+        <!-- Review 4 -->
+        <div class="min-w-[300px] bg-gray-100 rounded-lg shadow-md p-6 text-left animate-fadeIn">
+          <p class="italic mb-4">"Заказал "звездное небо" в спальню - ощущение космоса! Профи!"</p>
+          <p class="font-semibold">Ирина, г. Вишневое</p>
+        </div>
+        <!-- Review 5 -->
+        <div class="min-w-[300px] bg-gray-100 rounded-lg shadow-md p-6 text-left animate-fadeIn">
+          <p class="italic mb-4">"От замера до монтажа – все четко и культурно. Очень довольны!"</p>
+          <p class="font-semibold">Роман, г. Обухов</p>
+        </div>
+        <!-- Review 6 -->
+        <div class="min-w-[300px] bg-gray-100 rounded-lg shadow-md p-6 text-left animate-fadeIn">
+          <p class="italic mb-4">"Профессионально, быстро и качественно. Видно, что люди любят свое дело."</p>
+          <p class="font-semibold">Екатерина, г. Буча</p>
+        </div>
+      </div>
+
+      <!-- Left Arrow -->
+      <button onclick="scrollReviews(-1)" class="absolute left-0 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 hover:bg-yellow-200 p-3 rounded-full shadow-md transition-all">
+        ⬅️
+      </button>
+
+      <!-- Right Arrow -->
+      <button onclick="scrollReviews(1)" class="absolute right-0 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 hover:bg-yellow-200 p-3 rounded-full shadow-md transition-all">
+        ➡️
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Optional Smooth Scroll Script -->
+<script>
+  function scrollReviews(direction) {
+    const gallery = document.getElementById('reviewGallery');
+    gallery.scrollBy({
+      left: direction * 350,
+      behavior: 'smooth'
+    });
+  }
+</script>
+
+<!-- Optional Tailwind Custom Animation -->
+<style>
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.6s ease-in-out;
+  }
+
+  /* Scrollbar Hide (Optional for better aesthetics) */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+<!-- Blog Section -->
+<section id="blog" class="bg-white text-gray-800 py-20 px-4">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-12">Блог</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+
+      <!-- Стаття 1 -->
+      <div class="bg-gray-100 rounded-lg shadow-md p-6 hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2">Какие виды потолков бывают и какую выбрать?</h3>
+        <p class="text-sm text-gray-600 mb-4">
+          Сравнение сатиновых, глянцевых, матовых и декоративных решений для каждого места.
+        </p>
+        <a href="vybory-steli.html" class="inline-block mt-2 bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-full text-sm">Читать дальше</a>
+
+      </div>
+
+      <!-- Стаття 2 — Світлові лінії -->
+<div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300">
+  <h3 class="text-xl font-semibold mb-2">Световые линии – тренд или функциональность?</h3>
+  <p class="text-sm text-gray-700 mb-4">
+    Световые линии в натяжном потолке – это стиль, удобство и новый подход к освещению. Узнайте, почему их выбирают.
+  </p>
+  <a href="svitlovi-linii.html" class="inline-block bg-yellow-500 hover:bg-yellow-600 text-white px-5 py-2 rounded-full text-sm font-medium">
+    Читать дальше
+  </a>
+</div>
+
+
+
+      <!-- Стаття 3 -->
+<div class="bg-gray-100 rounded-lg p-6 shadow-md">
+  <h3 class="text-xl font-bold mb-2">ТОП-5 советов перед заказом натяжного потолка</h3>
+  <p class="text-sm text-gray-700 mb-4">
+    Как выбрать потолок, избежать ошибок и что спросить у мастера перед монтажом – читай наши практические советы.
+  </p>
+  <a href="porady-pered-zamovlennyam.html" class="inline-block bg-yellow-500 hover:bg-yellow-600 text-white px-5 py-2 rounded-full text-sm font-medium transition duration-300 ease-in-out">
+    Читать дальше
+  </a>
+</div>
+
+
+
+      <!-- Стаття 4 -->
+      <div class="bg-gray-100 rounded-lg shadow-md p-6 hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2">Как ухаживать за натяжным потолком</h3>
+        <p class="text-sm text-gray-600 mb-4">
+          Простые советы по уходу за разными типами потолков – матовая, глянцевая, сатиновая.
+        </p>
+       <a href="doglyad.html" class="inline-block mt-2 bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-full text-sm">Читать дальше</a>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Контакты -->
+<!-- Блок "Як проходить наша співпраця" -->
+<section id="cooperation" class="relative bg-cover bg-center bg-no-repeat py-16" style="background-image: url('road3.png');">
+  <div class="container mx-auto text-center relative z-20 px-4">
+
+    <h2 class="text-3xl md:text-5xl font-bold text-white mb-16">
+      Как проходит наше сотрудничество
+    </h2>
+
+    <div class="relative w-full h-24 mb-12">
+      <svg viewBox="0 0 1000 100" preserveAspectRatio="none" class="absolute top-0 left-0 w-full h-full">
+        <path d="M0,60 Q250,0 500,60 T1000,60" stroke="#facc15" stroke-width="4" fill="none"/>
+      </svg>
+    </div>
+
+    <div class="flex flex-col md:flex-row justify-around items-center text-white space-y-8 md:space-y-0 relative z-20">
+      <!-- Іконки + підписи -->
+      <div class="flex flex-col items-center">
+        <img src="01-call.svg" alt="Телефон" class="w-12 h-12 mb-4">
+        <p class="text-center text-sm font-semibold">Менеджер<br>связывается с вами</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <img src="02-car.svg" alt="Авто" class="w-12 h-12 mb-4">
+        <p class="text-center text-sm font-semibold">Бесплатный выезд<br>технолога</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <img src="03-gift.svg" alt="Подарунок" class="w-12 h-12 mb-4">
+        <p class="text-center text-sm font-semibold">Выбор потолка<br>и подарка</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <img src="04-contract.svg" alt="Договір" class="w-12 h-12 mb-4">
+        <p class="text-center text-sm font-semibold">Заключаем<br>договор</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <img src="05-tools.svg" alt="Монтаж" class="w-12 h-12 mb-4">
+        <p class="text-center text-sm font-semibold">Монтаж<br>1–2 дні</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Блок Акції без таймера з адаптивним розмиттям -->
+<section id="special-offer" class="relative bg-cover bg-center bg-no-repeat py-20" style="background-image: url('actions 2.jpg');">
+  
+  <!-- Напівпрозоре розмиття -->
+  <div class="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm md:backdrop-blur-0"></div>
+
+  <div class="relative container mx-auto text-center px-4 flex flex-col items-center space-y-6 max-w-2xl z-10 opacity-0 transform translate-y-10 transition-all duration-1000 ease-in-out" id="offerContent">
+    
+    <!-- Заголовок -->
+    <h2 class="text-3xl md:text-5xl font-bold text-yellow-400 uppercase leading-tight">
+      Обновите свое пространство с ProStyle
+    </h2>
+
+    <!-- Підзаголовок -->
+    <p class="text-base md:text-2xl text-white font-light leading-relaxed mt-4 px-2">
+      Закажите стильный натяжной потолок и получите индивидуальную консультацию и подарок на выбор!
+    </p>
+
+    <!-- Форма -->
+    <form class="flex flex-col items-center space-y-4 mt-6 w-full max-w-md">
+      <input type="text" placeholder="Ваше имя" class="w-full px-4 py-3 rounded text-black focus:outline-none" required>
+      <input type="tel" placeholder="Ваш телефон" class="w-full px-4 py-3 rounded text-black focus:outline-none" required>
+      <button type="submit" class="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 rounded transition-transform duration-300 hover:scale-105 animate-pulse-slow">
+        Оставить заявку
+      </button>
+    </form>
+
+  </div>
+</section>
+
+<!-- Скрипт для анімації появи -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const offerContent = document.getElementById('offerContent');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          offerContent.classList.remove('opacity-0', 'translate-y-10');
+          offerContent.classList.add('opacity-100', 'translate-y-0');
+        }
+      });
+    }, { threshold: 0.3 });
+
+    observer.observe(offerContent);
+  });
+</script>
+
+<!-- Стилі для пульсації -->
+<style>
+@keyframes pulse-slow {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+.animate-pulse-slow {
+  animation: pulse-slow 2s infinite;
+}
+</style>
+
+
+<section id="contacts" class="py-20 bg-white text-gray-800">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-10">Контакты</h2>
+    <div class="grid md:grid-cols-2 gap-12">
+
+      <!-- Контактна інформація -->
+      <div class="space-y-6 text-left">
+        <div>
+          <h3 class="text-xl font-semibold mb-1">📍 Адрес</h3>
+          <p class="text-gray-700">Киев, ул. Вишняковская 13А</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-1">📞 Телефон</h3>
+          <a href="tel:+380689415189" class="text-yellow-600 font-medium hover:underline">(068) 941-51-89</a>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-1">📧 Email</h3>
+          <a href="mailto:info@prostyle.kiev.ua" class="text-yellow-600 font-medium hover:underline">info@prostyle.kiev.ua</a>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-1">💬 Мессенджеры</h3>
+          <div class="flex space-x-4 mt-2">
+            <a href="viber://chat?number=%2B380671341244" class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-yellow-500 text-white text-lg hover:scale-110 transition">📱</a>
+            <a href="https://t.me/ProStyleCeilings" class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-yellow-500 text-white text-lg hover:scale-110 transition">✈️</a>
+            <a href="https://wa.me/380000000000" class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-yellow-500 text-white text-lg hover:scale-110 transition">💬</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-1">🕒 График работы</h3>
+          <p>Пн–Пт: 09:00–20:00</p>
+          <p>Сб–Нд: 09:30–18:00</p>
+        </div>
+      </div>
+
+      <!-- Карта -->
+      <div>
+        <iframe class="w-full h-80 rounded shadow-lg"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2538.8996476360323!2d30.6582127!3d50.3973766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cd4d9e4b7a4d%3A0x8aa3996a0b4450e6!2z0JrQstCw0YDQvtCy0LAg0JfQsNCy0LXRgtC10YDQtdC90LAsIDEz0JEsINCa0LjQtdCyLCDQmtC-0YDQv9C10LrRgiDQvtCx0LsuLCAwMjAwMA!5e0!3m2!1suk!2sua!4v1713544947822!5m2!1suk!2sua"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
