@@ -620,6 +620,34 @@
     scrollbar-width: none;
   }
 </style>
+<!-- Кнопка для открытия формы -->
+<div class="text-center mt-10">
+  <button onclick="document.getElementById('reviewFormRu').classList.toggle('hidden')" class="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-full text-sm font-semibold transition">
+    Оставить отзыв
+  </button>
+</div>
+
+<!-- Форма -->
+<div id="reviewFormRu" class="max-w-xl mx-auto mt-6 p-6 bg-gray-50 rounded-lg shadow hidden">
+  <form action="mailto:info@prostyle.kiev.ua" method="POST" enctype="text/plain">
+    <div class="mb-4">
+      <label for="name-ru" class="block text-sm font-medium mb-1">Ваше имя:</label>
+      <input type="text" id="name-ru" name="Имя" required class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring focus:border-yellow-400">
+    </div>
+    <div class="mb-4">
+      <label for="review-ru" class="block text-sm font-medium mb-1">Ваш отзыв:</label>
+      <textarea id="review-ru" name="Отзыв" rows="5" required class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring focus:border-yellow-400"></textarea>
+    </div>
+    <div class="mb-4">
+      <label for="contact-ru" class="block text-sm font-medium mb-1">Контакт (необязательно):</label>
+      <input type="text" id="contact-ru" name="Контакт" placeholder="Телефон или email" class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring focus:border-yellow-400">
+    </div>
+    <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-full text-sm font-semibold transition">
+      Отправить отзыв
+    </button>
+  </form>
+</div>
+
 <!-- Blog Section -->
 <section id="blog" class="bg-white text-gray-800 py-20 px-4">
   <div class="max-w-6xl mx-auto text-center">
