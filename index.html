@@ -177,6 +177,7 @@
 </button>
 
 
+
     </div>
   </section>
 
@@ -323,58 +324,58 @@
     </div>
   </section> 
 
-<!-- Модальне вікно "Безкоштовний замір" -->
+<!-- Модальна форма SalesDrive -->
 <div id="zamirModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">
   <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-md text-gray-800 relative">
     <button onclick="closeZamirModal()" class="absolute top-2 right-3 text-gray-500 hover:text-red-600 text-xl font-bold">&times;</button>
     <h3 class="text-2xl font-semibold mb-4 text-center">Безкоштовний замір</h3>
-    <form id="zamirForm" class="space-y-4">
-      <input type="text" name="name" required placeholder="Ваше ім’я" class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring focus:border-yellow-400">
-      <input type="tel" name="phone" required placeholder="Телефон" class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring focus:border-yellow-400">
-      <input type="hidden" name="form" value="xtND4Z1HHzbHhRn2gQQbgNPokgTc9F0v"> <!-- Актуальний ключ SalesDrive -->
-      <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-2 rounded-full w-full font-semibold transition">
-        Надіслати
-      </button>
-    </form>
+
+    <!-- Форма SalesDrive -->
+    <div>
+      <script id="salesdrive_forms_params_1">
+        var salesdrive_forms_params_1 = {
+          "id": "1",
+          "hash": "xtND4Z1HHzbHhRn2gQQbgNPokgTc9F0v",
+          "modal": "n",
+          "locale": "ua",
+          "defaults": {
+            "submit": "Надіслати",
+            "sd-form-title": "",
+            "fName": "",
+            "phone": ""
+          }
+        };
+      </script>
+      <script forms-id="1" id="salesdriveforms_script" async src="https://static.salesdrive.me/salesdriveforms/assets/js/salesdriveforms.js"></script>
+    </div>
+
+    <!-- Повідомлення після відправки -->
     <div id="zamirThanks" class="text-center text-green-600 font-semibold mt-4 hidden">
       Дякуємо, ми з вами зв’яжемось протягом 60 сек.
     </div>
   </div>
 </div>
 
+<!-- Скрипти -->
 <script>
-  // Відкрити/закрити
   function openZamirModal() {
     document.getElementById('zamirModal').classList.remove('hidden');
   }
+
   function closeZamirModal() {
     document.getElementById('zamirModal').classList.add('hidden');
-    document.getElementById('zamirForm').reset();
     document.getElementById('zamirThanks').classList.add('hidden');
   }
 
-  // Обробка форми
-  document.getElementById('zamirForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const formData = new FormData(this);
-    fetch('https://prostyle.salesdrive.me/handler/', {
-      method: 'POST',
-      body: formData
-    }).then(response => response.json())
-    .then(data => {
-      if (data.success || !data.error) {
-        document.getElementById('zamirForm').classList.add('hidden');
-        document.getElementById('zamirThanks').classList.remove('hidden');
-        setTimeout(closeZamirModal, 4000);
-      } else {
-        alert('Помилка відправки. Спробуйте ще раз.');
-      }
-    }).catch(() => {
-      alert('Помилка з’єднання. Спробуйте ще раз.');
-    });
+  // Відстеження відправки через iframe
+  window.addEventListener('message', function(event) {
+    if (typeof event.data === 'string' && event.data.includes('salesdriveforms-sended')) {
+      document.querySelector('#zamirModal iframe')?.classList.add('hidden');
+      document.getElementById('zamirThanks').classList.remove('hidden');
+      setTimeout(closeZamirModal, 4000);
+    }
   });
 </script>
-
 
 </body>
 </html>
