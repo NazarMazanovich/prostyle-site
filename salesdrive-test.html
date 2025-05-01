@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>SalesDrive Тест</title>
+</head>
+<body style="text-align: center; padding: 100px; font-family: Arial; background: #f9f9f9;">
+
+  <h1>Тестова сторінка SalesDrive</h1>
+  <p>Натисни кнопку, щоб перевірити спливаючу форму:</p>
+
+  <button onclick="document.getElementById('salesdriveforms_action_btn_2').click()"
+          style="padding: 12px 24px; background-color: #facc15; border: none; border-radius: 6px; font-size: 18px;">
+    Відкрити форму
+  </button>
+
+  <!-- SalesDrive форма -->
+  <div>
+    <script id="salesdrive_forms_params_2">
+      var salesdrive_forms_params_2 = {
+        "id": "2",
+        "hash": "q6kyO4GazLWqzd0a0OIJk37X2uwEY9i4",
+        "modal": "y",
+        "locale": "ua",
+        "defaults": {
+          "submit": "",
+          "sd-form-title": "",
+          "fName": "",
+          "mName": ""
+        }
+      };
+    </script>
+    <script forms-id="2" id="salesdriveforms_script" async src="https://static.salesdrive.me/salesdriveforms/assets/js/salesdriveforms.js"></script>
+    <button id="salesdriveforms_action_btn_2" class="salesdriveforms_action_btn" style="display: none;">Надіслати</button>
+  </div>
+
+</body>
+</html>
