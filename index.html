@@ -172,9 +172,10 @@
     <div class="relative z-10 text-center px-4">
       <h1 class="text-5xl font-extrabold mb-6 drop-shadow-lg">ProStyle — Натяжні стелі у Києві та області</h1>
       <p class="text-xl mb-6 drop-shadow">Стильно. Якісно. З гарантією до 17 років.</p>
-      <button onclick="document.getElementById('zamirModal').classList.remove('hidden')" class="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-full text-lg shadow-lg">
+      <button onclick="openZamirModal()" class="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-full text-lg shadow-lg">
   Безкоштовний замір
 </button>
+
 
     </div>
   </section>
@@ -322,33 +323,58 @@
     </div>
   </section> 
 
-  <!-- ...тут решта сайту... -->
-
-  <!-- 🔽 ВСТАВ СЮДИ модальне вікно -->
-  <div id="zamirModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">
-    <div class="bg-white rounded-lg shadow-lg p-8 w-full max-w-md relative">
-      <button onclick="document.getElementById('zamirModal').classList.add('hidden')" class="absolute top-2 right-3 text-gray-500 hover:text-black text-xl font-bold">&times;</button>
-      <h2 class="text-2xl font-semibold mb-4 text-center">Запис на безкоштовний замір</h2>
-      <form action="https://prostyle.salesdrive.me/handler/" method="POST" class="space-y-4">
-        <input type="hidden" name="form" value="LP_oQJkMJhlkzruzyU5IIpYMojc03t_gDzG0Mkuz7WvWT">
-        <div>
-          <label for="name" class="block text-sm font-medium">Ваше ім’я</label>
-          <input type="text" id="name" name="Name" required class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring focus:border-yellow-400 text-gray-800">
-        </div>
-        <div>
-          <label for="phone" class="block text-sm font-medium">Телефон</label>
-          <input type="tel" id="phone" name="phone" required class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring focus:border-yellow-400 text-gray-800">
-        </div>
-        <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-4 rounded-full transition">
-          Записатися
-        </button>
-      </form>
+<!-- Модальне вікно "Безкоштовний замір" -->
+<div id="zamirModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">
+  <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-md text-gray-800 relative">
+    <button onclick="closeZamirModal()" class="absolute top-2 right-3 text-gray-500 hover:text-red-600 text-xl font-bold">&times;</button>
+    <h3 class="text-2xl font-semibold mb-4 text-center">Безкоштовний замір</h3>
+    <form id="zamirForm" class="space-y-4">
+      <input type="text" name="name" required placeholder="Ваше ім’я" class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring focus:border-yellow-400">
+      <input type="tel" name="phone" required placeholder="Телефон" class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring focus:border-yellow-400">
+      <input type="hidden" name="form" value="xtND4Z1HHzbHhRn2gQQbgNPokgTc9F0v"> <!-- Актуальний ключ SalesDrive -->
+      <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-2 rounded-full w-full font-semibold transition">
+        Надіслати
+      </button>
+    </form>
+    <div id="zamirThanks" class="text-center text-green-600 font-semibold mt-4 hidden">
+      Дякуємо, ми з вами зв’яжемось протягом 60 сек.
     </div>
   </div>
+</div>
 
-  
-</body>
-</html>
+<script>
+  // Відкрити/закрити
+  function openZamirModal() {
+    document.getElementById('zamirModal').classList.remove('hidden');
+  }
+  function closeZamirModal() {
+    document.getElementById('zamirModal').classList.add('hidden');
+    document.getElementById('zamirForm').reset();
+    document.getElementById('zamirThanks').classList.add('hidden');
+  }
+
+  // Обробка форми
+  document.getElementById('zamirForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+    fetch('https://prostyle.salesdrive.me/handler/', {
+      method: 'POST',
+      body: formData
+    }).then(response => response.json())
+    .then(data => {
+      if (data.success || !data.error) {
+        document.getElementById('zamirForm').classList.add('hidden');
+        document.getElementById('zamirThanks').classList.remove('hidden');
+        setTimeout(closeZamirModal, 4000);
+      } else {
+        alert('Помилка відправки. Спробуйте ще раз.');
+      }
+    }).catch(() => {
+      alert('Помилка з’єднання. Спробуйте ще раз.');
+    });
+  });
+</script>
+
 
 </body>
 </html>
